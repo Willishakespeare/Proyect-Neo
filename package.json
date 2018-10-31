@@ -1,0 +1,16 @@
+{
+  "name": "neo",
+  "version": "0.0.1",
+  "description": "n/a",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^3.0.6",
+    "electron-reload": "^1.2.5",
+    "electron-titlebar-windows": "^3.0.0"
+  }
+}
