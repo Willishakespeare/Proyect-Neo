@@ -1,5 +1,13 @@
-const remote = require('electron').remote;
+const remote = require('electron').remote
+const main = remote.require('./main.js')
 
+document.getElementById("tagBoard").addEventListener("click", tagBoardFunction);
+
+function tagBoardFunction() {
+  main.openWindow()
+
+  //window.open("http://apps.bae.gym", 'nodeIntegration=true');
+}
 
 
 
@@ -27,11 +35,7 @@ const remote = require('electron').remote;
       window.minimize();
     });
 
-    maxButton.addEventListener("click", event => {
-      window = remote.getCurrentWindow();
-      window.maximize();
-      toggleMaxRestoreButtons();
-    });
+
 
     restoreButton.addEventListener("click", event => {
       window = remote.getCurrentWindow();

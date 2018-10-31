@@ -37,8 +37,8 @@ exports.openWindow = () => {
     height: 200
   })
   newWin.loadURL(url.format({
-    pathname: path.join(__dirname, 'src/html/enupal.html'),
-    protocol: 'file',
+    pathname: path.join("apps.bae.gym"),
+    protocol: 'http',
     slashes: true
   }))
 }
