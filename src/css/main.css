@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   border: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -168,7 +170,7 @@ p {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: #d6d6d6;
+  background: white;
   width: 78%;
   height: 97%;
 }
@@ -178,27 +180,30 @@ p {
   margin-bottom: auto;
   margin-right: auto;
   margin-left: 10px;
-  background: #d6d6d6;
+  background: #34495e;
   width: 20%;
   height: 97%;
 }
 
 .board {
-  background-color: #f64545;
+  background-color: #ef5350;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 80%;
-  width: 98%;
+  height: 84%;
+  width: 99%;
 }
 
-.buttonBar {
-  background-color: #f64545;
+.buttonBarClass {
+  background-color: #34495e;
   margin: auto;
-  height: 15%;
-  width: 98%;
+  height: 13%;
+  width: 99%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tagBoardClass {
@@ -206,7 +211,149 @@ p {
   text-decoration: none;
   text-shadow: 7px 5px 3px #2e2e2e;
   letter-spacing: 4px;
-  color: #d9d9d9;
+  color: #ecf0f1;
   font-family: "Franklin Gothic Heavy", sans-serif;
   font-size: 7em;
+}
+
+#buttonBar div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonNewClass, .buttonCloseClass {
+  height: 60%;
+  width: 25%;
+}
+
+.buttonPauseClass, .buttonRestartClass {
+  height: 60%;
+  width: 12%;
+}
+
+/* ///////////////////////////////// */
+.buttonNewClass {
+  margin-left: auto;
+  margin-right: 90px;
+  background: #25b963;
+  transition: transform .2s;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.iconNew {
+  margin-left: auto;
+  width: 28px;
+  padding-bottom: 2px;
+  margin-right: 12px;
+  transition: transform .2s;
+  color: #c8c8c8;
+  font-size: 25px;
+  font-family: "Segoe UI Semibold", sans-serif;
+}
+
+@keyframes bounce {
+  0%, {
+    transform: translateY(0) scale(1);
+  }
+
+  20% {
+    transform: translateY(-5px) scale(1.05);
+  }
+
+  60% {
+    -webkit-transform: translateY(3px) scale(1.06);
+  }
+
+  80% {
+    -webkit-transform: translateY(3px) scale(1.1);
+  }
+
+  100%, {
+    transform: translateY(0) scale(1.1);
+  }
+}
+
+.buttonNewClass:hover {
+  margin-left: auto;
+  margin-right: 80px;
+  width: 260px;
+  background: #22b05e;
+  transform: scale(1.1);
+}
+
+.buttonNewClass:hover>.iconNew {
+  color: #114035;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: linear;
+  -webkit-animation-iteration-count: linear;
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  transform: scale(1.1);
+}
+
+.textNew {
+  margin-right: auto;
+  padding-bottom: 1px;
+  user-select: none;
+  color: #ecf0f1;
+  font-size: 17px;
+  font-family: "Segoe UI Semibold", sans-serif;
+}
+
+@keyframes bounce2 {
+  0%, {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: translateX(1px) scale(1.01);
+  }
+
+  60% {
+    -webkit-transform: translateX(2px) scale(1.020);
+  }
+
+  80% {
+    -webkit-transform: translateX(2px) scale(1.030);
+  }
+
+  100%, {
+    -webkit-transform: translateX(3px) scale(1.040);
+  }
+}
+
+.buttonNewClass:hover>.textNew {
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: linear;
+  -webkit-animation-iteration-count: linear;
+  -webkit-animation-name: bounce2;
+  animation-name: bounce2;
+  transform: translateX(3px) scale(1.04);
+}
+
+/* ///////////////////////////////// */
+.buttonRestartClass {
+  background: #457ac8
+}
+
+.buttonPauseClass {
+  background: #457ac8
+}
+
+.buttonCloseClass {
+  margin-left: 90px;
+  margin-right: auto;
+  background: #b64444
 }
