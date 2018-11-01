@@ -1,13 +1,19 @@
 const remote = require('electron').remote
 const main = remote.require('./main.js')
 
-document.getElementById("tagBoard").addEventListener("click", tagBoardFunction);
-
-function tagBoardFunction() {
+document.getElementById("tagBoard").addEventListener("click", event => {
   main.openWindow()
 
-  //window.open("http://apps.bae.gym", 'nodeIntegration=true');
-}
+});
+
+document.getElementById('buttonNew').addEventListener("click", event => {
+  console.log("HI2");
+});
+
+
+document.getElementById('buttonClose').addEventListener("click", event => {
+  console.log("HI");
+});
 
 
 
@@ -34,6 +40,7 @@ function tagBoardFunction() {
       window = remote.getCurrentWindow();
       window.minimize();
     });
+
 
 
 

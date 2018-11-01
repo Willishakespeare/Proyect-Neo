@@ -222,9 +222,14 @@ p {
   justify-content: center;
 }
 
-.buttonNewClass, .buttonCloseClass {
+.buttonNewClass {
   height: 60%;
-  width: 25%;
+  width: 250px;
+}
+
+.buttonCloseClass {
+  height: 60%;
+  width: 200px;
 }
 
 .buttonPauseClass, .buttonRestartClass {
@@ -232,10 +237,10 @@ p {
   width: 12%;
 }
 
-/* ///////////////////////////////// */
+/* //////////////////////////////////// */
 .buttonNewClass {
   margin-left: auto;
-  margin-right: 90px;
+  margin-right: 120px;
   background: #25b963;
   transition: transform .2s;
   -webkit-transition: 0.3s ease;
@@ -348,12 +353,76 @@ p {
   background: #457ac8
 }
 
+/* ///////////////////////////////// */
 .buttonPauseClass {
   background: #457ac8
 }
 
+/* ///////////////////////////////// */
 .buttonCloseClass {
-  margin-left: 90px;
+  margin-left: 120px;
   margin-right: auto;
-  background: #b64444
+  background: #ef5350;
+  transition: transform .2s;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
+
+.iconClose {
+  margin-left: auto;
+  width: 28px;
+  padding-bottom: 2px;
+  margin-right: 12px;
+  transition: transform .2s;
+  color: #c8c8c8;
+  font-size: 25px;
+  font-family: "Segoe UI Semibold", sans-serif;
+}
+
+.buttonCloseClass:hover {
+  margin-left: 80px;
+  margin-right: auto;
+  width: 210px;
+  background: #e53935;
+  transform: scale(1.1);
+}
+
+.buttonCloseClass:hover>.iconClose {
+  color: #114035;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: linear;
+  -webkit-animation-iteration-count: linear;
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  transform: scale(1.1);
+}
+
+.textClose {
+  margin-left: auto;
+  padding-bottom: 1px;
+  user-select: none;
+  color: #ecf0f1;
+  font-size: 17px;
+  font-family: "Segoe UI Semibold", sans-serif;
+}
+
+.buttonCloseClass:hover>.textClose {
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: linear;
+  -webkit-animation-iteration-count: linear;
+  -webkit-animation-name: bounce2;
+  animation-name: bounce2;
+  transform: translateX(3px) scale(1.04);
+}
+
+/* ///////////////////////////////// */
