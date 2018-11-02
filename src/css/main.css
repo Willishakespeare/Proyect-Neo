@@ -234,13 +234,13 @@ p {
 
 .buttonPauseClass, .buttonRestartClass {
   height: 60%;
-  width: 12%;
+  width: 165px;
 }
 
 /* //////////////////////////////////// */
 .buttonNewClass {
   margin-left: auto;
-  margin-right: 120px;
+  margin-right: 80px;
   background: #25b963;
   transition: transform .2s;
   -webkit-transition: 0.3s ease;
@@ -282,7 +282,7 @@ p {
 
 .buttonNewClass:hover {
   margin-left: auto;
-  margin-right: 80px;
+  margin-right: 60px;
   width: 260px;
   background: #22b05e;
   transform: scale(1.1);
@@ -350,17 +350,185 @@ p {
 
 /* ///////////////////////////////// */
 .buttonRestartClass {
-  background: #457ac8
+  background: #3498db;
+  border-style: solid;
+  border-width: 2px;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-left: 1px;
+  border-color: #2980b9;
+  transition: transform .2s;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.textRestart {
+  margin-left: 2px;
+  margin-right: auto;
+  padding-bottom: 1px;
+  user-select: none;
+  color: #ecf0f1;
+  font-size: 17px;
+  font-family: "Segoe UI Semibold", sans-serif;
+}
+
+.iconRestart {
+  margin-left: auto;
+  width: 28px;
+  padding-bottom: 2px;
+  margin-right: -25px;
+  transition: transform .2s;
+  color: #c8c8c8;
+  font-size: 25px;
+  font-family: "Segoe UI Semibold", sans-serif;
+}
+
+.buttonRestartClass:hover>.textRestart {
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: linear;
+  -webkit-animation-iteration-count: linear;
+  -webkit-animation-name: bounce2;
+  animation-name: bounce2;
+  transform: translateX(3px) scale(1.04);
+}
+
+.buttonRestartClass:hover {
+  margin-left: 40px;
+  width: 170px;
+  background: #2980b9;
+  transform: scale(1.1);
+}
+
+.buttonRestartClass:hover~.buttonPauseClass {
+  margin-right: 40px;
+  margin-left: 9px;
+  width: 20px;
+  transform: scale(1.1);
+}
+
+.buttonRestartClass:hover~.buttonPauseClass span {
+  display: none;
+}
+
+.buttonRestartClass:hover>.iconRestart {
+  color: #114035;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: linear;
+  -webkit-animation-iteration-count: linear;
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  transform: scale(1.1);
+}
+
+.buttonRestartClass:hover>.iconRestart {
+  margin-right: 15px;
+  content: url('../image/play.png');
 }
 
 /* ///////////////////////////////// */
 .buttonPauseClass {
-  background: #457ac8
+  background: #3498db;
+  transition: transform .2s;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
 
+.buttonPauseClass:hover {
+  margin-right: 40px;
+  width: 200px;
+  background: #2980b9;
+  transform: scale(1.1);
+}
+
+.buttonPauseClass:hover+.buttonRestartClass {
+  width: 20px;
+  transform: scale(1.1);
+}
+
+/* .textPause {
+  margin-left: 15px;
+  margin-right: auto;
+  padding-bottom: 1px;
+  user-select: none;
+  color: #ecf0f1;
+  font-size: 17px;
+  font-family: "Segoe UI Semibold", sans-serif;
+}
+
+.iconPause {
+  margin-left: auto;
+  width: 28px;
+  padding-bottom: 2px;
+  margin-right: -40px;
+  transition: transform .2s;
+  color: #c8c8c8;
+  font-size: 25px;
+  font-family: "Segoe UI Semibold", sans-serif;
+}
+
+.buttonPauseClass:hover>.textPause {
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: linear;
+  -webkit-animation-iteration-count: linear;
+  -webkit-animation-name: bounce2;
+  animation-name: bounce2;
+  transform: translateX(3px) scale(1.04);
+}
+
+
+
+.buttonPauseClass:hover>.buttonPause {
+  color: #114035;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: linear;
+  -webkit-animation-iteration-count: linear;
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  transform: scale(1.1);
+}
+
+.buttonPauseClass:hover>.iconPause {
+  color: #114035;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: linear;
+  -webkit-animation-iteration-count: linear;
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  transform: scale(1.1);
+}
+
+.buttonPauseClass:hover>.iconPause {
+  margin-right: -5px;
+  content: url('../image/pause.png');
+} */
 /* ///////////////////////////////// */
 .buttonCloseClass {
-  margin-left: 120px;
+  margin-left: 80px;
   margin-right: auto;
   background: #ef5350;
   transition: transform .2s;
@@ -380,7 +548,7 @@ p {
 }
 
 .buttonCloseClass:hover {
-  margin-left: 80px;
+  margin-left: 60px;
   margin-right: auto;
   width: 210px;
   background: #e53935;

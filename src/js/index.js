@@ -1,13 +1,10 @@
 const remote = require('electron').remote
-const main = remote.require('./main.js')
+const main = remote.require('./main.js');
 
-document.getElementById("tagBoard").addEventListener("click", event => {
-  main.openWindow()
 
-});
 
 document.getElementById('buttonNew').addEventListener("click", event => {
-  console.log("HI2");
+  main.openWindow2()
 });
 
 
@@ -20,7 +17,7 @@ document.getElementById('buttonClose').addEventListener("click", event => {
 (function handleWindowControls() {
 
 
-  // When document has loaded, initialise
+
 
 
   document.onreadystatechange = () => {
