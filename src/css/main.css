@@ -7,6 +7,8 @@
 }
 
 html {
+
+
   box-sizing: border-box;
 }
 
@@ -21,6 +23,7 @@ html, body {
 }
 
 body {
+
   display: block;
   margin: 0;
   padding: 0;
@@ -77,15 +80,16 @@ p {
 }
 
 .minb {
-  font-size: 19px;
+
+  width: 16px;
 }
 
 .maxb {
-  font-size: 20px;
+  width: 15px;
 }
 
 .clob {
-  font-size: 23px;
+  width: 15px;
 }
 
 #window-controls .button {
