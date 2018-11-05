@@ -7,8 +7,6 @@
 }
 
 html {
-
-
   box-sizing: border-box;
 }
 
@@ -23,14 +21,13 @@ html, body {
 }
 
 body {
-
   display: block;
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", sans-serif;
-  background: #48545c;
+  background: #254053;
   color: #FFF;
-  border: 1px solid #48545c;
+  border: 5px solid #254053;
 }
 
 h1 {
@@ -80,7 +77,6 @@ p {
 }
 
 .minb {
-
   width: 16px;
 }
 
@@ -142,11 +138,12 @@ p {
 }
 
 #window-title {
+  user-select: none;
   grid-column: 1;
   display: flex;
   align-items: center;
-  font-family: "Segoe UI", sans-serif;
-  font-size: 13px;
+  font-family: "Segoe UI Semibold", sans-serif;
+  font-size: 12px;
   margin-left: 5px;
   overflow-x: hidden;
   -webkit-app-region: drag;
@@ -179,16 +176,6 @@ p {
   height: 97%;
 }
 
-.rigthSide {
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-right: auto;
-  margin-left: 10px;
-  background: #34495e;
-  width: 20%;
-  height: 97%;
-}
-
 .board {
   background-color: #ef5350;
   margin: auto;
@@ -211,13 +198,13 @@ p {
 }
 
 .tagBoardClass {
+  user-select: none;
   margin: auto;
   text-decoration: none;
-  text-shadow: 7px 5px 3px #2e2e2e;
   letter-spacing: 4px;
   color: #ecf0f1;
   font-family: "Franklin Gothic Heavy", sans-serif;
-  font-size: 7em;
+  font-size: 90px;
 }
 
 #buttonBar div {
@@ -252,6 +239,7 @@ p {
 }
 
 .iconNew {
+  user-select: none;
   margin-left: auto;
   width: 28px;
   padding-bottom: 2px;
@@ -377,6 +365,7 @@ p {
 }
 
 .iconRestart {
+  user-select: none;
   margin-left: auto;
   width: 28px;
   padding-bottom: 2px;
@@ -402,21 +391,10 @@ p {
 }
 
 .buttonRestartClass:hover {
-  margin-left: 40px;
+  margin-left: -20px;
   width: 170px;
   background: #2980b9;
   transform: scale(1.1);
-}
-
-.buttonRestartClass:hover~.buttonPauseClass {
-  margin-right: 40px;
-  margin-left: 9px;
-  width: 20px;
-  transform: scale(1.1);
-}
-
-.buttonRestartClass:hover~.buttonPauseClass span {
-  display: none;
 }
 
 .buttonRestartClass:hover>.iconRestart {
@@ -448,18 +426,13 @@ p {
 }
 
 .buttonPauseClass:hover {
-  margin-right: 40px;
-  width: 200px;
+  margin-right: -40px;
+  width: 210px;
   background: #2980b9;
   transform: scale(1.1);
 }
 
-.buttonPauseClass:hover+.buttonRestartClass {
-  width: 20px;
-  transform: scale(1.1);
-}
-
-/* .textPause {
+.textPause {
   margin-left: 15px;
   margin-right: auto;
   padding-bottom: 1px;
@@ -470,14 +443,13 @@ p {
 }
 
 .iconPause {
-  margin-left: auto;
-  width: 28px;
+  user-select: none;
+  margin-left: 0px;
+  width: 0px;
   padding-bottom: 2px;
-  margin-right: -40px;
+  margin-right: 0px;
   transition: transform .2s;
   color: #c8c8c8;
-  font-size: 25px;
-  font-family: "Segoe UI Semibold", sans-serif;
 }
 
 .buttonPauseClass:hover>.textPause {
@@ -493,8 +465,6 @@ p {
   animation-name: bounce2;
   transform: translateX(3px) scale(1.04);
 }
-
-
 
 .buttonPauseClass:hover>.buttonPause {
   color: #114035;
@@ -527,9 +497,11 @@ p {
 }
 
 .buttonPauseClass:hover>.iconPause {
-  margin-right: -5px;
+  width: 28px;
+  margin-right: 12px;
   content: url('../image/pause.png');
-} */
+}
+
 /* ///////////////////////////////// */
 .buttonCloseClass {
   margin-left: 80px;
@@ -541,6 +513,7 @@ p {
 }
 
 .iconClose {
+  user-select: none;
   margin-left: auto;
   width: 28px;
   padding-bottom: 2px;
@@ -598,3 +571,48 @@ p {
 }
 
 /* ///////////////////////////////// */
+.rigthSide {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 10px;
+  background: white;
+  width: 20%;
+  height: 97%;
+}
+
+.slideBar {
+  margin: auto;
+  background: #6b8eb1;
+  height: 84%;
+  width: 96%;
+}
+
+.areaButton {
+  margin: auto;
+  background: #34495e;
+  height: 13%;
+  width: 96%;
+}
+
+.areaSet {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.tagAreaClass {
+  user-select: none;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #ecf0f1;
+  font-size: 60px;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+}

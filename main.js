@@ -7,12 +7,12 @@ const {
 const path = require('path')
 const url = require('url')
 
-// Enable live reload for Electron too
-require('electron-reload')(__dirname, {
-  // Note that the path to electron may vary according to the main file
-  electron: require(`${__dirname}/node_modules/electron`)
-});
-
+// // Enable live reload for Electron too
+// require('electron-reload')(__dirname, {
+//   // Note that the path to electron may vary according to the main file
+//   electron: require(`${__dirname}/node_modules/electron`)
+// });
+//
 
 function createWindow() {
   let win = new BrowserWindow({
@@ -27,26 +27,30 @@ function createWindow() {
     slashes: true
   }))
 
-  win.webContents.openDevTools()
 }
 
-const gotTheLock = app.requestSingleInstanceLock()
+var myWindow = null;
+var shouldQuit = app.makeSingleInstance(function(commandLine, workingDirectory) {
+  // Someone tried to run a second instance, we should focus our window.
+  if (myWindow) {
+    if (myWindow.isMinimized()) myWindow.restore();
+    myWindow.focus();
+  }
+});
 
-if (!gotTheLock) {
-  app.quit()
-} else {
-  app.on('second-instance', (event, commandLine, workingDirectory) => {
-    // Someone tried to run a second instance, we should focus our window.
-    if (myWindow) {
-      if (myWindow.isMinimized()) myWindow.restore()
-      myWindow.focus()
-    }
-  })
-
-  // Create myWindow, load the rest of the app, etc...
-  app.on('ready', createWindow)
+if (shouldQuit) {
+  app.quit();
+  return;
 }
+app.on('ready', createWindow)
 
+app.on('window-all-closed', app.quit);
+app.on('before-quit', () => {
+  app.removeAllListeners('close');
+  app.close();
+});
+
+app.on('closed', () => app.quit());
 
 exports.openWindow2 = () => {
   let newWin = new BrowserWindow({
