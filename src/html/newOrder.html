@@ -13,22 +13,22 @@
 
   <div id="titlebar">
     <div id="window-title">
-      <span>Proyect Neo</span>
+      <span>Agregar Nueva Orden</span>
     </div>
 
     <div id="drag-region">
       <div id="window-controls">
         <div class="button" id="min-button">
-          <span class="minb">&#x25bc;</span>
+          <img class="minb" src="../image/titleBarButtons/minb.png" draggable="false"></img>
         </div>
         <div class="button" id="max-button">
-          <span class="maxb">&#x25a0;</span>
+          <img class="maxb" src="../image/titleBarButtons/maxb.png" draggable="false"></img>
         </div>
         <div class="button" id="restore-button">
           <span>&#x25bc;</span>
         </div>
         <div class="button" id="close-button">
-          <span class="clob">&#x25cf;</span>
+          <img class="clob" src="../image/titleBarButtons/clob.png" draggable="false"></img>
         </div>
       </div>
     </div>
@@ -36,6 +36,76 @@
 
   <div class="container">
 
+    <div class="sideUp">
+      <div class="box1">
+        <span class="tagTitle">Capturar Nueva Orden</span>
+      </div>
+      <div class="box2">
+
+        <div class="boxSpan">
+          <span class="ls">Wip</span>
+          <span class="ls">Numero de parte</span>
+          <span class="ls">Numero de Empleado</span>
+          <span class="ls">Turno/Tiempo Extra</span>
+          <span class="ls">Cantidad de Piezas</span>
+          <span class="ls">Cantidad de Operadores</span>
+
+        </div>
+
+        <div class="boxInput">
+          <input class="lb" type="text" id="wipInput"><br>
+          <input class="lb" type="text" id="npInput"><br>
+          <input class="lb" type="text" id="neInput"><br>
+          <select class="lb2" id="turnInput">
+            <option class="lb3" value="0" id="turnInput1">Seleccione su Turno</option>
+            <option class="lb3" value="1" id="turnInput2">Turno 1 (6:40AM - 4:26PM) LUNES - VIERNES</option>
+            <option class="lb3" value="2" id="turnInput3">Turno 2 (4:30AM - 1:40PM) LUNES - VIERNES</option>
+            <option class="lb3" value="3" id="turnInput4">Turno 3 (6:40AM - 6:40PM) LUNES - VIERNES</option>
+            <option class="lb3" value="4" id="turnInput5">Turno 4 (6:40AM - 6:40PM) VIERNES - DOMINGO</option>
+          </select>
+          <div class="lbn">
+            <input class="lb4" type="text" id="qInput"> <br>
+            <div class="q1">
+              <span>1</span>
+            </div>
+            <div class="q5">
+              <span>5</span>
+            </div>
+            <div class="q10">
+              <span>10</span>
+            </div>
+            <div class="q15">
+              <span>15</span>
+            </div>
+            <div class="q20">
+              <span>20</span>
+            </div>
+          </div>
+          <div class="lbn">
+            <input class="lb4" type="text" id="qeInput"><br>
+            <div class="eq1">
+              <span>1</span>
+            </div>
+            <div class="eq2">
+              <span>2</span>
+            </div>
+            <div class="eq3">
+              <span>3</span>
+            </div>
+            <div class="eq4">
+              <span>4</span>
+            </div>
+            <div class="eq5">
+              <span>5</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="sideDown">
+
+    </div>
 
 
   </div>

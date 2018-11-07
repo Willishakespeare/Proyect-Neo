@@ -3,15 +3,53 @@ const main = remote.require('./main.js');
 
 
 
+
+document.getElementById("wipInput").addEventListener("keyup", function(e) {
+  if (e.keyCode == 13) {
+    event.preventDefault();
+    document.getElementById("npInput").focus();
+  }
+});
+
+
+
+document.getElementById("npInput").addEventListener("keyup", function(e) {
+  if (e.keyCode == 13) {
+    event.preventDefault();
+    document.getElementById("neInput").focus();
+  }
+});
+
+
+document.getElementById("neInput").addEventListener("keyup", function(e) {
+  if (e.keyCode == 13) {
+    event.preventDefault();
+    document.getElementById("turnInput").focus();
+  }
+});
+
+
+document.getElementById("turnInput").addEventListener("change", function() {
+  event.preventDefault();
+  document.getElementById("qInput").focus();
+});
+
+document.getElementById("qInput").addEventListener("focus", function() {
+  document.getElementById("qInput").addEventListener("keyup", function(e) {
+    if (e.keyCode == 13) {
+      event.preventDefault();
+      document.getElementById("qeInput").focus();
+    }
+  });
+});
+
+
+
 (function handleWindowControls() {
-
-
-
 
 
   document.onreadystatechange = () => {
     if (document.readyState == "complete") {
-      console.log("do");
       init();
     }
   };
@@ -60,4 +98,6 @@ const main = remote.require('./main.js');
       }
     }
   }
+
+
 })();

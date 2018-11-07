@@ -27,7 +27,9 @@ body {
   font-family: "Segoe UI", sans-serif;
   background: #254053;
   color: #FFF;
-  border: 5px solid #254053;
+  border-bottom: 5px solid #254053;
+  border-right: 5px solid #254053;
+  border-left: 5px solid #254053;
 }
 
 h1 {
@@ -73,7 +75,7 @@ p {
   top: 0;
   right: 0;
   font-family: "Segoe UI Symbol";
-  height: 33px;
+  height: 32px;
 }
 
 .minb {
@@ -251,7 +253,7 @@ p {
 }
 
 @keyframes bounce {
-  0%, {
+  0% {
     transform: translateY(0) scale(1);
   }
 
@@ -267,7 +269,7 @@ p {
     transform: translateY(3px) scale(1.1);
   }
 
-  100%, {
+  100% {
     transform: translateY(0) scale(1.1);
   }
 }
