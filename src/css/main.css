@@ -236,7 +236,6 @@ p {
   margin-right: 80px;
   background: #2ecc71;
   transition: transform .2s;
-  -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
 
@@ -479,15 +478,10 @@ p {
 
 .buttonPauseClass:hover>.iconPause {
   color: #114035;
-  -webkit-animation-duration: .5s;
   animation-duration: .5s;
-  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   animation-iteration-count: linear;
-  -webkit-animation-iteration-count: linear;
-  -webkit-animation-name: bounce;
   animation-name: bounce;
   transform: scale(1.1);
 }

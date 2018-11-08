@@ -27,7 +27,9 @@ body {
   font-family: "Segoe UI", sans-serif;
   background: #254053;
   color: #FFF;
-  border: 5px solid #254053;
+  border-bottom: 5px solid #254053;
+  border-right: 5px solid #254053;
+  border-left: 5px solid #254053;
 }
 
 h1 {
@@ -73,7 +75,7 @@ p {
   top: 0;
   right: 0;
   font-family: "Segoe UI Symbol";
-  height: 33px;
+  height: 32px;
 }
 
 .minb {
@@ -234,7 +236,6 @@ p {
   margin-right: 80px;
   background: #2ecc71;
   transition: transform .2s;
-  -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
 
@@ -251,7 +252,7 @@ p {
 }
 
 @keyframes bounce {
-  0%, {
+  0% {
     transform: translateY(0) scale(1);
   }
 
@@ -267,7 +268,7 @@ p {
     transform: translateY(3px) scale(1.1);
   }
 
-  100%, {
+  100% {
     transform: translateY(0) scale(1.1);
   }
 }
@@ -477,15 +478,10 @@ p {
 
 .buttonPauseClass:hover>.iconPause {
   color: #114035;
-  -webkit-animation-duration: .5s;
   animation-duration: .5s;
-  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   animation-iteration-count: linear;
-  -webkit-animation-iteration-count: linear;
-  -webkit-animation-name: bounce;
   animation-name: bounce;
   transform: scale(1.1);
 }

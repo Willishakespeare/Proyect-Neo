@@ -7,10 +7,10 @@ const {
 const path = require('path')
 const url = require('url')
 
-// Enable live reload for Electron too
-require('electron-reload')(__dirname, {
-  electron: require(`${__dirname}/node_modules/electron`)
-});
+// // Enable live reload for Electron too
+// require('electron-reload')(__dirname, {
+//   electron: require(`${__dirname}/node_modules/electron`)
+// });
 
 
 function createWindow() {

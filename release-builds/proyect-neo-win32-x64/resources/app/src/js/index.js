@@ -2,18 +2,6 @@ const remote = require('electron').remote
 const main = remote.require('./main.js');
 
 
-
-document.getElementById('buttonNew').addEventListener("click", event => {
-  main.openWindow2()
-});
-
-
-document.getElementById('buttonClose').addEventListener("click", event => {
-  console.log("HI");
-});
-
-
-
 (function handleWindowControls() {
 
 
@@ -71,3 +59,12 @@ document.getElementById('buttonClose').addEventListener("click", event => {
     }
   }
 })();
+
+document.getElementById('buttonNew').addEventListener("click", event => {
+  main.openWindow2()
+});
+
+
+document.getElementById('buttonClose').addEventListener("click", event => {
+  console.log("HI");
+});

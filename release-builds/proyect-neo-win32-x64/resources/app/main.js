@@ -53,8 +53,8 @@ app.on('closed', () => app.quit());
 
 exports.openWindow2 = () => {
   let newWin = new BrowserWindow({
-    width: 800,
-    height: 400,
+    width: 1000,
+    height: 700,
     resizable: false,
     frame: false
   })

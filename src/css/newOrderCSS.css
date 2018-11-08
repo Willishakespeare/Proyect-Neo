@@ -163,7 +163,9 @@ p {
   align-items: center;
   margin: auto;
   padding: 0;
-  background: #2ecc71;
+  /* background: #2ecc71;
+    background: #254053; */
+  background: #254053;
   width: 100%;
   height: calc(100% - 32px);
 }
@@ -236,11 +238,13 @@ p {
   padding-left: 10px;
   height: 40px;
   width: 300px;
-  background: #34495e;
+  background: #1F3544;
   color: #ebebeb;
   font-family: "Segoe UI Semibold", sans-serif;
   font-size: 15px;
   border: 3px solid #34495e;
+  transition: transform .2s;
+  transition: 0.3s ease;
 }
 
 @keyframes blink {
@@ -277,9 +281,11 @@ p {
   font-size: 20px;
   text-align-last: center;
   text-align: center;
-  background: #34495e;
+  background: #1F3544;
   border: 3px solid #34495e;
   width: auto;
+  transition: transform .2s;
+  transition: 0.3s ease;
 }
 
 .lb2:focus {
@@ -288,6 +294,9 @@ p {
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
   border: 3px solid #34495e;
+  transition: transform .2s;
+  transition: 0.3s ease;
+  ;
 }
 
 .lb3 {
@@ -298,6 +307,8 @@ p {
   font-family: "Segoe UI Light", sans-serif;
   font-size: 20px;
   text-align: center;
+  transition: transform .2s;
+  transition: 0.3s ease;
 }
 
 .lb3:focus {
@@ -306,6 +317,8 @@ p {
   animation-duration: 1s;
   animation-iteration-count: infinite;
   background: #000000;
+  transition: transform .2s;
+  transition: 0.3s ease;
 }
 
 .lbn {
@@ -327,10 +340,13 @@ p {
   height: 40px;
   width: 45px;
   padding-left: 10px;
-  background: #34495e;
+  background: #1F3544;
   color: #ebebeb;
+  border: 3px solid #34495e;
   font-family: "Segoe UI Semibold", sans-serif;
   font-size: 15px;
+  transition: transform .2s;
+  transition: 0.3s ease;
 }
 
 .lb4:focus {
@@ -341,18 +357,76 @@ p {
   border: 3px solid #34495e;
 }
 
-.lbn div {
+.qInputButtons {
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  width: 20px;
+}
+
+.qInputButtons div {
+  display: flex;
+  align-items: center;
+}
+
+.qInputUpClass {
+  height: 20px;
+  width: 20px;
+  background: #1F3544;
+  border-top: 3px solid #34495e;
+  border-right: 3px solid #34495e;
+  border-bottom: 1px solid #34495e;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.qInputUpClass:hover {
+  background: #3E92CC;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.qInputDownClass:hover {
+  background: #3E92CC;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.qInputDownClass {
+  height: 20px;
+  width: 20px;
+  background: #1F3544;
+  border-top: 1px solid #34495e;
+  border-right: 3px solid #34495e;
+  border-bottom: 3px solid #34495e;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.qInputTag {
+  user-select: none;
+  height: 20px;
+  width: 20px;
+  margin: 0px;
+  margin-bottom: 1px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.lbnd {
   display: flex;
   align-items: center;
   margin-left: 20px;
   margin-right: 0px;
-  background: #237bd2;
+  background: #3E92CC;
   height: 40px;
   width: 45px;
 }
 
-.lbn div:hover {
-  background: #17599a;
+.lbnd:hover {
+  background: #2E6B95;
+  transition: transform .2s;
+  transition: 0.3s ease;
 }
 
 .lbn div span {
@@ -362,32 +436,149 @@ p {
   font-size: 20px;
 }
 
-/* .boxInput input {
-  margin: auto;
-  background: #34495e;
-  border: 1px solid #20445d;
-  height: 35px;
-  width: 250px;
-}
-
-.boxInput select {
-  margin: auto;
-  background: #34495e;
-  color: #ebebeb;
-  font-family: "Segoe UI Light", sans-serif;
-  font-size: 16px;
-  text-align-last: center;
-  text-align: center;
-  border: 1px solid #20445d;
-  height: 35px;
-  width: auto;
-} */
 .sideDown {
   margin-top: 10px;
   margin-bottom: auto;
   height: 15%;
   width: 95%;
-  background: blue;
+  display: flex;
+  align-items: flex-start;
+}
+
+.sideDown div {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 50px;
+  height: 50px;
+}
+
+.buttonSaveClass {
+  display: flex;
+  width: 240px;
+  background: #1F3544;
+  border: 3px solid #56E39F;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.buttonSaveClass span {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6px;
+  color: #FFFAFF;
+  user-select: none;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 500;
+  font-size: 23px;
+}
+
+.buttonSaveClass:hover {
+  background: #56E39F;
+  width: 260px;
+  transition: transform .2s;
+  transition: 0.3s ease;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 900;
+}
+
+.buttonSaveClass:hover>.iconSave {
+  transition: transform .2s;
+  transition: 0.3s ease;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 15px;
+  width: 28px;
+  content: url('../image/save1.png');
+  animation-duration: .5s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-iteration-count: linear;
+  animation-name: bounce;
+}
+
+.buttonSaveClass:hover>span {
+  margin-left: 25px;
+  color: #254053;
+}
+
+.buttonClearClass {
+  width: 150px;
+  display: flex;
+  background: #1F3544;
+  border: 3px solid #3E92CC;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.buttonClearClass span {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6px;
+  color: #FFFAFF;
+  user-select: none;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 500;
+  font-size: 23px;
+}
+
+.buttonClearClass:hover>.iconDelete {
+  transition: transform .2s;
+  transition: 0.3s ease;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 15px;
+  width: 28px;
+  content: url('../image/delete.png');
+  animation-duration: .5s;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-iteration-count: linear;
+  animation-name: bounce;
+}
+
+.buttonClearClass:hover {
+  width: 180px;
+  background: #3E92CC;
+  transition: transform .2s;
+  transition: 0.3s ease;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 900;
+}
+
+.buttonClearClass:hover>span {
+  margin-left: 20px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  20% {
+    transform: translateY(-5px) scale(1.05);
+  }
+
+  60% {
+    transform: translateY(3px) scale(1.06);
+  }
+
+  80% {
+    transform: translateY(3px) scale(1.1);
+  }
+
+  100% {
+    transform: translateY(0) scale(1.1);
+  }
 }
 
 /* ///////////////////////////////// */
