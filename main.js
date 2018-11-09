@@ -4,6 +4,8 @@ const {
   BrowserWindow
 } = electron
 
+
+//app.setPath('userData', "path/new/directory");
 const path = require('path')
 const url = require('url')
 
@@ -41,7 +43,8 @@ if (shouldQuit) {
   app.quit();
   return;
 }
-app.on('ready', createWindow)
+app.on('ready', createWindow);
+
 
 app.on('window-all-closed', app.quit);
 app.on('before-quit', () => {

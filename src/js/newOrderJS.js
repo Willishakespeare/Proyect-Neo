@@ -159,25 +159,37 @@ document.getElementById("buttonSaveOrder").addEventListener("click", function() 
 
   console.log("hi");
 
-  var sqlite3 = require('sqlite3').verbose();
-  var db = new sqlite3.Database(':memory:');
 
-  db.serialize(function() {
-    db.run("CREATE TABLE lorem (info TEXT)");
-
-    var stmt = db.prepare("INSERT INTO lorem VALUES (?)");
-    for (var i = 0; i < 10; i++) {
-      stmt.run("Ipsum " + i);
-    }
-    stmt.finalize();
-
-    //db.each("SELECT rowid AS id, info FROM lorem", function(err, row) {
-    //console.log(row.id + ": " + row.info);
-    //});
+  // Import Dexie
+  const Dexie = require('dexie');
+  // Force debug mode to get async stacks from exceptions.
+  Dexie.debug = true; // In production, set to false to increase performance a little.
+  //
+  // Declare Database
+  //
+  let db = new Dexie("FriendDatabase");
+  db.version(1).stores({
+    friends: "++id,name,age"
   });
-
-  //db.close();
-
+  //
+  // Have Fun
+  //
+  db.transaction('rw', db.friends, function*() {
+    // Make sure we have something in DB:
+    if ((yield db.friends.where('name').equals('Josephine').count()) === 0) {
+      let id = yield db.friends.add({
+        name: "Josephine",
+        age: 21
+      });
+      alert(`Added friend with id ${id}`);
+    }
+    // Query:
+    let youngFriends = yield db.friends.where("age").below(25).toArray();
+    // Show result:
+    alert("My young friends: " + JSON.stringify(youngFriends));
+  }).catch(e => {
+    console.error(e.stack);
+  });
 
 
 })
