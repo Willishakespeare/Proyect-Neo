@@ -154,42 +154,85 @@ document.getElementById("buttonQ20").addEventListener("click", function() {
   document.getElementById("qInput").value = 20;
 })
 
+//////////////////////////////////////////////////////////////////////////////
+
+document.getElementById("buttonQe1").addEventListener("click", function() {
+  document.getElementById("qeInput").value = 1;
+})
+
+document.getElementById("buttonQe2").addEventListener("click", function() {
+  document.getElementById("qeInput").value = 2;
+})
+
+document.getElementById("buttonQe3").addEventListener("click", function() {
+  document.getElementById("qeInput").value = 3;
+})
+document.getElementById("buttonQe4").addEventListener("click", function() {
+  document.getElementById("qeInput").value = 4;
+})
+document.getElementById("buttonQe5").addEventListener("click", function() {
+  document.getElementById("qeInput").value = 5;
+})
+
+//////////////////////////////////////////////////////////////////////////////
+
+document.getElementById("buttonClearSheet").addEventListener("click", function() {
+  document.getElementById("wipInput").value = null;
+  document.getElementById("npInput").value = null;
+  document.getElementById("neInput").value = null;
+  document.getElementById("turnInput").value = 0;
+  document.getElementById("qInput").value = null;
+  document.getElementById("qeInput").value = null;
+
+
+});
+//////////////////////////////////////////////////////////////////////////////
 
 document.getElementById("buttonSaveOrder").addEventListener("click", function() {
 
-  const Dexie = require('dexie');
-  // Force debug mode to get async stacks from exceptions.
-  Dexie.debug = false; // In production, set to false to increase performance a little.
+  var wip = document.getElementById("wipInput").value;
+  var np = document.getElementById("npInput").value;
+  var ne = document.getElementById("neInput").value;
+  var e = document.getElementById("turnInput");
+  var turn = e.options[e.selectedIndex].value;
+  var q = document.getElementById("qInput").value;
+  var qe = document.getElementById("qeInput").value;
+
+  alert(wip + " " + np + " " + ne + " " + turn + " " + q + " " + qe);
+
+  // const Dexie = require('dexie');
+  // // Force debug mode to get async stacks from exceptions.
+  // Dexie.debug = false; // In production, set to false to increase performance a little.
+  // //
+  // // Declare Database
+  // //
+  // let db = new Dexie("");
+  // db.version(1).stores({
+  //   friends: "++id,wip,employernumber,numberpart,quanty,shift,employquanty,startday,starthour,finishday,starthour,status,diference"
+  // });
+  // //employernumber,wip,numberpart,quanty,shift,employquanty,startday,finishday,starthour,finishhour,status,diference
+  // // Have Fun
+  // //
+  // db.transaction('rw', db.friends, function*() {
+  //   // Make sure we have something in DB:
   //
-  // Declare Database
   //
-  let db = new Dexie("FriendDatabase");
-  db.version(1).stores({
-    friends: "++id,name,age"
-  });
+  //   db.friends.add({
+  //     name: "n",
+  //     age: 21
+  //   });
   //
-  // Have Fun
   //
-  db.transaction('rw', db.friends, function*() {
-    // Make sure we have something in DB:
-
-
-    db.friends.add({
-      name: "n",
-      age: 21
-    });
-
-
-    alert(yield db.friends.where("id").between(0, Infinity).count());
-
-
-    let youngFriends = yield db.friends.where("id").between(0, Infinity).toArray();
-    alert("My young friends: " + JSON.stringify(youngFriends));
-    window.close();
-
-  }).catch(err) {
-    console.error("Ups...");
-  };
+  //   alert(yield db.friends.where("id").between(0, Infinity).count());
+  //
+  //
+  //   let youngFriends = yield db.friends.where("id").between(0, Infinity).toArray();
+  //   alert("My young friends: " + JSON.stringify(youngFriends));
+  //   window.close();
+  //
+  // }).catch(e => {
+  //   console.error("Ups...");
+  // });
 
 })
 /////////////////////////////////////////////////////////////////////////////
