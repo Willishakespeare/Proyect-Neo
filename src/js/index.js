@@ -66,5 +66,5 @@ document.getElementById('buttonNew').addEventListener("click", event => {
 
 
 document.getElementById('buttonClose').addEventListener("click", event => {
-  console.log("HI");
+  alert("HI");
 });

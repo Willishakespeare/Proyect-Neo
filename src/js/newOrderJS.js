@@ -1,5 +1,6 @@
-const remote = require('electron').remote
+const remote = require('electron').remote;
 const main = remote.require('./main.js');
+const app = require('electron');
 
 (function handleWindowControls() {
 
@@ -53,6 +54,10 @@ const main = remote.require('./main.js');
 })();
 
 
+function setFocusToTextBox() {
+  document.getElementById("wipInput").focus();
+}
+window.onload = setFocusToTextBox;
 
 document.getElementById("wipInput").addEventListener("keyup", function(e) {
   if (e.keyCode == 13) {
@@ -95,8 +100,8 @@ document.getElementById("qInput").addEventListener("focus", function() {
 
 //////////////////////////////////////////////////////////////////////////////
 document.getElementById("qInputUp").addEventListener("click", function() {
-  if (document.getElementById("qInput").value < 1) {
-    document.getElementById("qInput").value = 1;
+  if (document.getElementById("qInput").value < 0) {
+    document.getElementById("qInput").value = 0;
   } else {
     document.getElementById("qInput").value = parseInt(document.getElementById("qInput").value) + 1;
   }
@@ -104,20 +109,20 @@ document.getElementById("qInputUp").addEventListener("click", function() {
 })
 
 document.getElementById("qInputDown").addEventListener("click", function() {
-  if (document.getElementById("qInput").value > 1) {
+  if (document.getElementById("qInput").value > 0) {
 
     document.getElementById("qInput").value = parseInt(document.getElementById("qInput").value) - 1;
 
   } else {
-    document.getElementById("qInput").value = 1;
+    document.getElementById("qInput").value = 0;
   }
 
 })
 
 
 document.getElementById("qeInputUp").addEventListener("click", function() {
-  if (document.getElementById("qeInput").value < 1) {
-    document.getElementById("qeInput").value = 1;
+  if (document.getElementById("qeInput").value < 0) {
+    document.getElementById("qeInput").value = 0;
   } else {
     document.getElementById("qeInput").value = parseInt(document.getElementById("qeInput").value) + 1;
   }
@@ -125,12 +130,12 @@ document.getElementById("qeInputUp").addEventListener("click", function() {
 })
 
 document.getElementById("qeInputDown").addEventListener("click", function() {
-  if (document.getElementById("qeInput").value > 1) {
+  if (document.getElementById("qeInput").value > 0) {
 
     document.getElementById("qeInput").value = parseInt(document.getElementById("qeInput").value) - 1;
 
   } else {
-    document.getElementById("qeInput").value = 1;
+    document.getElementById("qeInput").value = 0;
   }
 
 })
@@ -181,10 +186,10 @@ document.getElementById("buttonClearSheet").addEventListener("click", function()
   document.getElementById("npInput").value = null;
   document.getElementById("neInput").value = null;
   document.getElementById("turnInput").value = 0;
-  document.getElementById("qInput").value = null;
-  document.getElementById("qeInput").value = null;
+  document.getElementById("qInput").value = 0;
+  document.getElementById("qeInput").value = 0;
 
-
+  document.getElementById("wipInput").focus();
 });
 //////////////////////////////////////////////////////////////////////////////
 
@@ -193,46 +198,50 @@ document.getElementById("buttonSaveOrder").addEventListener("click", function() 
   var wip = document.getElementById("wipInput").value;
   var np = document.getElementById("npInput").value;
   var ne = document.getElementById("neInput").value;
-  var e = document.getElementById("turnInput");
-  var turn = e.options[e.selectedIndex].value;
+  var turn = document.getElementById("turnInput").value;
   var q = document.getElementById("qInput").value;
   var qe = document.getElementById("qeInput").value;
+  var vacio = "";
 
-  alert(wip + " " + np + " " + ne + " " + turn + " " + q + " " + qe);
 
-  // const Dexie = require('dexie');
-  // // Force debug mode to get async stacks from exceptions.
-  // Dexie.debug = false; // In production, set to false to increase performance a little.
-  // //
-  // // Declare Database
-  // //
-  // let db = new Dexie("");
-  // db.version(1).stores({
-  //   friends: "++id,wip,employernumber,numberpart,quanty,shift,employquanty,startday,starthour,finishday,starthour,status,diference"
-  // });
-  // //employernumber,wip,numberpart,quanty,shift,employquanty,startday,finishday,starthour,finishhour,status,diference
-  // // Have Fun
-  // //
-  // db.transaction('rw', db.friends, function*() {
-  //   // Make sure we have something in DB:
-  //
-  //
-  //   db.friends.add({
-  //     name: "n",
-  //     age: 21
-  //   });
-  //
-  //
-  //   alert(yield db.friends.where("id").between(0, Infinity).count());
-  //
-  //
-  //   let youngFriends = yield db.friends.where("id").between(0, Infinity).toArray();
-  //   alert("My young friends: " + JSON.stringify(youngFriends));
-  //   window.close();
-  //
-  // }).catch(e => {
-  //   console.error("Ups...");
-  // });
+
+
+
+  if (wip.trim() == vacio || np.trim() == vacio || ne.trim() == vacio || turn == 0 || q == 0 || qe == 0) {
+
+    main.openWindow3();
+
+
+  } else {
+
+
+    var Datastore = require('nedb'),
+      db = new Datastore({
+        filename: 'database/base.db',
+      });
+    db.loadDatabase(function(err) {});
+
+    var doc = {
+      wip: wip,
+      np: np,
+      ne: ne,
+      turn: turn,
+      q: q,
+      qe: qe
+    };
+
+    db.insert(doc, function(err, newDoc) {
+
+      window.close();
+    });
+
+
+  }
+
+
+
+
+
 
 })
 /////////////////////////////////////////////////////////////////////////////
