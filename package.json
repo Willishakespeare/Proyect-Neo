@@ -19,6 +19,7 @@
     "crypto": "^1.0.1",
     "dexie": "^2.0.4",
     "electron-reload": "^1.2.5",
+    "load-json-file": "^5.1.0",
     "nedb": "^1.8.0"
   }
 }

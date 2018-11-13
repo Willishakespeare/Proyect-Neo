@@ -1,21 +1,25 @@
-const electron = require('electron')
 const {
   app,
   BrowserWindow
-} = electron
-app.setName("Proyect Neo");
-app.setPath('userData', "//192.168.1.206/comun/NO BORRAR/Produccion P28/Plan de Produccion/Proyect Neo/database");
-const path = require('path')
-const url = require('url')
+} = require('electron')
 
-// // Enable live reload for Electron too
-// require('electron-reload')(__dirname, {
-//   electron: require(`${__dirname}/node_modules/electron`)
-// });
+app.setName("Proyect Neo");
+const path = require('path');
+const url = require('url');
+
+let win;
+let newWin;
+let alertWin;
+
+
+// Enable live reload for Electron too
+require('electron-reload')(__dirname, {
+  electron: require(`${__dirname}/node_modules/electron`)
+});
 
 
 function createWindow() {
-  let win = new BrowserWindow({
+  win = new BrowserWindow({
     width: 1300,
     height: 700,
     resizable: false,
@@ -59,16 +63,32 @@ app.on('before-quit', () => {
 });
 
 exports.openWindow2 = () => {
-  let newWin = new BrowserWindow({
+  newWin = new BrowserWindow({
     width: 1000,
     height: 700,
     resizable: false,
-    frame: false
+    frame: false,
+    alwaysOnTop: true
   })
   newWin.loadURL(url.format({
     pathname: path.join(__dirname, 'src/html/newOrder.html'),
     protocol: 'file',
     slashes: true
   }))
-  newWin.webContents.openDevTools();
+}
+
+
+exports.openWindow3 = () => {
+  alertWin = new BrowserWindow({
+    width: 500,
+    height: 200,
+    resizable: false,
+    frame: false,
+    alwaysOnTop: true
+  })
+  alertWin.loadURL(url.format({
+    pathname: path.join(__dirname, 'src/html/alert.html'),
+    protocol: 'file',
+    slashes: true
+  }))
 }

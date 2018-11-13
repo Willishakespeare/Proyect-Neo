@@ -4,8 +4,6 @@ const {
 } = require('electron')
 
 app.setName("Proyect Neo");
-app.setPath('userData', "//192.168.1.206/comun/NO BORRAR/Produccion P28/Plan de Produccion/Proyect Neo/database");
-
 const path = require('path');
 const url = require('url');
 
