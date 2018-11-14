@@ -1,4 +1,5 @@
 * {
+  user-select: none;
   margin: 0;
   padding: 0;
   border: 0;
@@ -189,6 +190,98 @@ p {
   width: 99%;
 }
 
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.tbl-content {
+  background: #34495e;
+  height: 100%;
+  overflow-x: auto;
+  margin-top: 0px;
+  border: 5px solid #ef5350;
+}
+
+tr {
+  display: flex;
+}
+
+.cellContentAll {
+  height: 105px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 3px solid #ef5350;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.cellContentAll:hover {
+  background: #2c3e50;
+}
+
+.cellContentTitle {
+  height: 35%;
+  width: 100%;
+  display: flex;
+}
+
+.cellContentTitle span {
+  font-family: "Segoe UI Semibold", sans-serif;
+  font-size: 23px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 10px;
+}
+
+.cellContentDown {
+  font-family: "Segoe UI Semibold", sans-serif;
+  font-size: 15px;
+  height: 65%;
+  width: 100%;
+  display: flex;
+}
+
+.cellContentLeft {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 35%;
+  padding-left: 10px;
+}
+
+.cellContentMiddle {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 35%;
+  padding-left: 10px;
+}
+
+.cellContentRight {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 30%;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+.tbl-content:hover~::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
 .buttonBarClass {
   background-color: #34495e;
   margin: auto;
@@ -322,15 +415,10 @@ p {
 }
 
 .buttonNewClass:hover>.textNew {
-  -webkit-animation-duration: .3s;
   animation-duration: .3s;
-  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   animation-iteration-count: linear;
-  -webkit-animation-iteration-count: linear;
-  -webkit-animation-name: bounce2;
   animation-name: bounce2;
   transform: translateX(3px);
 }
@@ -345,7 +433,6 @@ p {
   border-left: 1px;
   border-color: #2980b9;
   transition: transform .2s;
-  -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
 

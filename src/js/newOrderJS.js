@@ -3,6 +3,10 @@ const main = remote.require('./main.js');
 const app = require('electron');
 const fs = require('fs');
 const loadJsonFile = require('load-json-file');
+const {
+  ipcRenderer
+} = require('electron');
+
 
 (function handleWindowControls() {
 
@@ -216,11 +220,15 @@ document.getElementById("buttonSaveOrder").addEventListener("click", function() 
   var de;
   var te;
   var std;
+  var st = "1";
+  df = "0";
   var vacio = "";
 
   if (wip.trim() == vacio || np.trim() == vacio || ne.trim() == vacio || turn == 0 || q == 0 || qe == 0) {
 
-    main.openWindow3();
+    let Data = "Por favor Ingrese Todos los datos";
+    ipcRenderer.send('request-update-label-in-second-window', Data)
+
 
   } else {
 
@@ -244,7 +252,7 @@ document.getElementById("buttonSaveOrder").addEventListener("click", function() 
 
       } else {
         var rec2 = record[0];
-        std = rec2["Std"]
+        std = rec2["Std"];
         do_something_when_you_get_your_result();
       }
     });
@@ -285,35 +293,8 @@ document.getElementById("buttonSaveOrder").addEventListener("click", function() 
 
 
     te = allSecondsTemp + ":" + allSecondsMinute + ":0";
-    alert(te);
 
     const remoteApp = require('electron').remote;
-
-
-    // var Datastore = require('nedb'),
-    //   db = new Datastore({
-    //     filename: remoteApp.app.getPath('documents').concat("/database/.base.db"),
-    //     autoload: true
-    //   });
-    // db.loadDatabase(function(err) {});
-    //
-    // var doc = {
-    //   wip: wip,
-    //   np: np,
-    //   ne: ne,
-    //   turn: turn,
-    //   q: q,
-    //   qe: qe,
-    //   ds: ds,
-    //   ts: ts,
-    //   de: de,
-    //   te: te
-    // };
-    //
-    // db.insert(doc, function(err, newDoc) {
-    //
-    //
-    // });
 
 
     var Datastore = require('nedb'),
@@ -338,14 +319,43 @@ document.getElementById("buttonSaveOrder").addEventListener("click", function() 
 
     db.insert(doc, function(err, newDoc) {
 
-      window.close();
+      saveLocale();
     });
 
+
+
+    function saveLocale() {
+      var Datastore = require('nedb'),
+        db = new Datastore({
+          filename: remoteApp.app.getPath('documents').concat("/database/base.db"),
+          autoload: true
+        });
+      db.loadDatabase(function(err) {});
+
+      var doc = {
+        wip: wip,
+        np: np,
+        ne: ne,
+        turn: turn,
+        q: q,
+        qe: qe,
+        ds: ds,
+        ts: ts,
+        de: de,
+        te: te,
+        st: st,
+        df: df
+      };
+
+      db.insert(doc, function(err, newDoc) {
+        ipcRenderer.send('updateSend', true)
+        window.close();
+      });
+    }
   }
 
 
 })
-
 
 
 
