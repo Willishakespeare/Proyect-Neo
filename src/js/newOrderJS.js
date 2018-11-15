@@ -296,10 +296,11 @@ document.getElementById("buttonSaveOrder").addEventListener("click", function() 
 
     const remoteApp = require('electron').remote;
 
+    var d = new Date();
 
     var Datastore = require('nedb'),
       db = new Datastore({
-        filename: '//192.168.1.206/comun/NO BORRAR/Produccion P28/Plan de Produccion/Proyect Neo/database/base.db',
+        filename: "//192.168.1.206/comun/NO BORRAR/Produccion P28/Plan de Produccion/Proyect Neo/produccion/" + d.getFullYear() + "/" + months[d.getMonth()] + "/" + d.getDate() + ".db",
         autoload: true
       });
     db.loadDatabase(function(err) {});
@@ -327,7 +328,7 @@ document.getElementById("buttonSaveOrder").addEventListener("click", function() 
     function saveLocale() {
       var Datastore = require('nedb'),
         db = new Datastore({
-          filename: remoteApp.app.getPath('documents').concat("/database/base.db"),
+          filename: remoteApp.app.getPath('documents') + "/proyectNeo/produccion/" + d.getFullYear() + "/" + months[d.getMonth()] + "/" + d.getDate() + ".db",
           autoload: true
         });
       db.loadDatabase(function(err) {});

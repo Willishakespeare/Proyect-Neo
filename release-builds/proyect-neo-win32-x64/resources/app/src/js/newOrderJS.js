@@ -1,6 +1,12 @@
 const remote = require('electron').remote;
 const main = remote.require('./main.js');
 const app = require('electron');
+const fs = require('fs');
+const loadJsonFile = require('load-json-file');
+const {
+  ipcRenderer
+} = require('electron');
+
 
 (function handleWindowControls() {
 
@@ -194,81 +200,171 @@ document.getElementById("buttonClearSheet").addEventListener("click", function()
 //////////////////////////////////////////////////////////////////////////////
 
 document.getElementById("buttonSaveOrder").addEventListener("click", function() {
-
   var wip = document.getElementById("wipInput").value;
   var np = document.getElementById("npInput").value;
   var ne = document.getElementById("neInput").value;
   var turn = document.getElementById("turnInput").value;
   var q = document.getElementById("qInput").value;
   var qe = document.getElementById("qeInput").value;
+  ////////////////////////////////////////////////////////
   var d = new Date();
-  alert(d);
-  var dateTime = d.getDate() + "/" + d.getMonth() + "/" + d.getFullYear();
+  var day = d.getDate();
+  var months = ["Ene", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec"];
+  var month = months[d.getMonth()];
+  var year = d.getFullYear();
+  var ds = day + "/" + month + "/" + year;
+  var second = d.getSeconds();
+  var minute = d.getMinutes();
+  var hour = d.getHours();
+  var ts = hour + ":" + minute + ":" + second;
+  var de;
+  var te;
+  var std;
+  var st = "1";
+  df = "0";
   var vacio = "";
 
+  if (wip.trim() == vacio || np.trim() == vacio || ne.trim() == vacio || turn == 0 || q == 0 || qe == 0) {
+
+    let Data = "Por favor Ingrese Todos los datos";
+    ipcRenderer.send('request-update-label-in-second-window', Data)
+
+
+  } else {
 
 
 
 
-  // if (wip.trim() == vacio || np.trim() == vacio || ne.trim() == vacio || turn == 0 || q == 0 || qe == 0) {
-  //
-  //   main.openWindow3();
-  //
-  // } else {
-  //
-  //   const remoteApp = require('electron').remote;
-  //
-  //
-  //   var Datastore = require('nedb'),
-  //     db = new Datastore({
-  //       filename: remoteApp.app.getPath('documents').concat("/database/.base.db"),
-  //       autoload: true
-  //     });
-  //   db.loadDatabase(function(err) {});
-  //
-  //   var doc = {
-  //     wip: wip,
-  //     np: np,
-  //     ne: ne,
-  //     turn: turn,
-  //     q: q,
-  //     qe: qe
-  //   };
-  //
-  //   db.insert(doc, function(err, newDoc) {
-  //
-  //
-  //   });
-  //
-  //
-  //   var Datastore = require('nedb'),
-  //     db = new Datastore({
-  //       filename: '//192.168.1.206/comun/NO BORRAR/Produccion P28/Plan de Produccion/Proyect Neo/database/base.db',
-  //       autoload: true
-  //     });
-  //   db.loadDatabase(function(err) {});
-  //
-  //   var doc = {
-  //     wip: wip,
-  //     np: np,
-  //     ne: ne,
-  //     turn: turn,
-  //     q: q,
-  //     qe: qe
-  //   };
-  //
-  //   db.insert(doc, function(err, newDoc) {
-  //
-  //     window.close();
-  //   });
-  //
-  //
-  // }
+    var Datastore = require('nedb'),
+      db = new Datastore({
+        filename: '//192.168.1.206/comun/NO BORRAR/Produccion P28/Plan de Produccion/Proyect Neo/database/numberParts.db',
+        autoload: true
+      });
+    db.loadDatabase(function(err) {});
+
+
+    db.find({
+      Item: np
+    }, function(err, record) {
+      if (err) {}
+
+      if (isEmpty(record)) {
+
+      } else {
+        var rec2 = record[0];
+        std = rec2["Std"];
+        do_something_when_you_get_your_result();
+      }
+    });
+
+  }
 
 
 
+  function do_something_when_you_get_your_result() {
 
+    let waitTime = (parseFloat(std) * 60) * parseInt(q);
+    let tempAllSeconds = (hour * 60) + (minute);
+    let allSeconds = tempAllSeconds + waitTime;
+
+
+    if (allSeconds >= 400) {
+      allSeconds = allSeconds + 25;
+    }
+    if (allSeconds >= 480) {
+      allSeconds = allSeconds + 15;
+    }
+    if (allSeconds >= 720) {
+      allSeconds = allSeconds + 35;
+    }
+    if (allSeconds >= 1440) {
+      allSeconds = allSeconds - 1440;
+      de = (day + 1) + "/" + month + "/" + year;
+    } else {
+      de = day + "/" + month + "/" + year;
+    }
+
+
+    let allSecondsTemp = Math.floor(allSeconds / 60);
+    let allSecondsHour = allSecondsTemp;
+    allSecondsHour = allSecondsTemp * 60;
+    let allSecondsMinute = allSeconds - allSecondsHour;
+
+
+
+    te = allSecondsTemp + ":" + allSecondsMinute + ":0";
+
+    const remoteApp = require('electron').remote;
+
+    var d = new Date();
+
+    var Datastore = require('nedb'),
+      db = new Datastore({
+        filename: "//192.168.1.206/comun/NO BORRAR/Produccion P28/Plan de Produccion/Proyect Neo/produccion/" + d.getFullYear() + "/" + months[d.getMonth()] + "/" + d.getDate() + ".db",
+        autoload: true
+      });
+    db.loadDatabase(function(err) {});
+
+    var doc = {
+      wip: wip,
+      np: np,
+      ne: ne,
+      turn: turn,
+      q: q,
+      qe: qe,
+      ds: ds,
+      ts: ts,
+      de: de,
+      te: te
+    };
+
+    db.insert(doc, function(err, newDoc) {
+
+      saveLocale();
+    });
+
+
+
+    function saveLocale() {
+      var Datastore = require('nedb'),
+        db = new Datastore({
+          filename: remoteApp.app.getPath('documents') + "/proyectNeo/produccion/" + d.getFullYear() + "/" + months[d.getMonth()] + "/" + d.getDate() + ".db",
+          autoload: true
+        });
+      db.loadDatabase(function(err) {});
+
+      var doc = {
+        wip: wip,
+        np: np,
+        ne: ne,
+        turn: turn,
+        q: q,
+        qe: qe,
+        ds: ds,
+        ts: ts,
+        de: de,
+        te: te,
+        st: st,
+        df: df
+      };
+
+      db.insert(doc, function(err, newDoc) {
+        ipcRenderer.send('updateSend', true)
+        window.close();
+      });
+    }
+  }
 
 
 })
+
+
+
+function isEmpty(obj) {
+  for (var key in obj) {
+    if (obj.hasOwnProperty(key))
+      return false;
+  }
+  return true;
+}
 /////////////////////////////////////////////////////////////////////////////

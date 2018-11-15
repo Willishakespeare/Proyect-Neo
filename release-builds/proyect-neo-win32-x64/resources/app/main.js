@@ -1,21 +1,22 @@
 const {
   app,
-  BrowserWindow
+  BrowserWindow,
+  ipcMain
 } = require('electron')
 
 app.setName("Proyect Neo");
 const path = require('path');
 const url = require('url');
 
-let win;
-let newWin;
-let alertWin;
+var win;
+var newWin;
+var alertWin;
 
 
-// Enable live reload for Electron too
-require('electron-reload')(__dirname, {
-  electron: require(`${__dirname}/node_modules/electron`)
-});
+// // Enable live reload for Electron too
+// require('electron-reload')(__dirname, {
+//   electron: require(`${__dirname}/node_modules/electron`)
+// });
 
 
 function createWindow() {
@@ -79,6 +80,14 @@ exports.openWindow2 = () => {
 
 
 exports.openWindow3 = () => {
+
+}
+ipcMain.on('updateSend', (event, arg) => {
+  win.webContents.send('updateRec', arg);
+});
+
+ipcMain.on('request-update-label-in-second-window', (event, arg) => {
+
   alertWin = new BrowserWindow({
     width: 500,
     height: 200,
@@ -91,4 +100,13 @@ exports.openWindow3 = () => {
     protocol: 'file',
     slashes: true
   }))
-}
+
+  alertWin.webContents.once('dom-ready', () => {
+    alertWin.webContents.send('action-update-label', arg);
+  })
+
+
+
+
+
+});

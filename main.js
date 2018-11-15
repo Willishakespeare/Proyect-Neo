@@ -13,6 +13,7 @@ var newWin;
 var alertWin;
 
 
+
 // Enable live reload for Electron too
 require('electron-reload')(__dirname, {
   electron: require(`${__dirname}/node_modules/electron`)
