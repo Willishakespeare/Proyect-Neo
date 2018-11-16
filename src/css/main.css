@@ -1,3 +1,28 @@
+@font-face {
+  font-family: "Open Sans Bold";
+  src: url(../fonts/opensans/OpenSans-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url(../fonts/opensans/OpenSans-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Semibold";
+  src: url(../fonts/opensans/OpenSans-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Light";
+  src: url(../fonts/opensans/OpenSans-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Light";
+  src: url(../fonts/opensans/Roboto-Light.ttf) format("truetype");
+}
+
 * {
   user-select: none;
   margin: 0;
@@ -28,9 +53,6 @@ body {
   font-family: "Segoe UI", sans-serif;
   background: #254053;
   color: #FFF;
-  border-bottom: 5px solid #254053;
-  border-right: 5px solid #254053;
-  border-left: 5px solid #254053;
 }
 
 h1 {
@@ -44,150 +66,36 @@ p {
   color: rgba(255, 255, 255, 0.4);
 }
 
-#titlebar {
-  display: block;
-  margin: auto;
-  height: 32px;
-  width: calc(100%-2);
-  /*Compensate for body 1px border*/
-  background: #254053;
-  margin: auto;
-  color: #FFF;
-}
-
-#titlebar {
-  padding: 4px;
-}
-
-#titlebar #drag-region {
-  width: 100%;
-  height: 100%;
-  width: calc(100%-2);
-}
-
-#titlebar {
-  color: #FFF;
-}
-
-#window-controls {
-  display: grid;
-  grid-template-columns: repeat(3, 46px);
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-family: "Segoe UI Symbol";
-  height: 32px;
-}
-
-.minb {
-  width: 16px;
-}
-
-.maxb {
-  width: 15px;
-}
-
-.clob {
-  width: 15px;
-}
-
-#window-controls .button {
-  grid-row: 0 / span 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-#window-controls #min-button {
-  grid-column: 1;
-}
-
-#window-controls #max-button, #window-controls #restore-button {
-  grid-column: 2;
-}
-
-#window-controls #close-button {
-  grid-column: 3;
-}
-
-#window-controls {
-  -webkit-app-region: no-drag;
-}
-
-#window-controls .button {
-  user-select: none;
-  cursor: default;
-  opacity: 0.8;
-}
-
-#window-controls .button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  opacity: 1;
-}
-
-#window-controls #close-button:hover {
-  background: #E81123;
-}
-
-#window-controls #restore-button {
-  display: none;
-}
-
-#titlebar #drag-region {
-  display: grid;
-  grid-template-columns: auto 138px;
-}
-
-#window-title {
-  user-select: none;
-  grid-column: 1;
-  display: flex;
-  align-items: center;
-  font-family: "Segoe UI Semibold", sans-serif;
-  font-size: 12px;
-  margin-left: 5px;
-  overflow-x: hidden;
-  -webkit-app-region: drag;
-}
-
-#window-title span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.7;
-}
-
 .container {
   display: flex;
   margin: auto;
   padding: 0;
-  background: white;
+  background: transpatent;
   width: 100%;
-  height: calc(100% - 32px);
+  height: 100%;
 }
 
 .leftSide {
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: auto;
+  background: #4073cf;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: white;
-  width: 78%;
-  height: 97%;
+  background: transpatent;
+  width: 100%;
+  height: 100%;
+  -webkit-app-region: drag;
 }
 
 .board {
-  background-color: #ef5350;
+  background-color: #274375;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 84%;
-  width: 99%;
+  height: 83%;
+  width: 97%;
+  -webkit-app-region: no-drag;
 }
 
 table {
@@ -209,6 +117,7 @@ tr {
   margin-left: 1%;
   margin-right: 1%;
   margin-bottom: 5px;
+  borde border-radius: 5px;
   box-shadow: 0px 5px 20px #2e2e2e;
   background: #f6f6f6;
   height: 105px;
@@ -227,7 +136,6 @@ tr {
   background-image: linear-gradient(to bottom right, #3c546b, #2c3e50);
   height: 35%;
   width: 100%;
-  display: flex;
 }
 
 .cellContentTitle span {
@@ -300,12 +208,14 @@ tr {
 
 .buttonBarClass {
   background-color: #34495e;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   height: 13%;
-  width: 99%;
+  width: 97%;
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-app-region: no-drag;
 }
 
 .tagBoardClass {
@@ -665,54 +575,98 @@ tr {
 
 /* ///////////////////////////////// */
 .rigthSide {
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-right: auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-left: 10px;
-  background: white;
-  width: 20%;
-  height: 97%;
-}
-
-.areaButton {
-  margin: auto;
-  background: #34495e;
-  height: 13%;
-  width: 96%;
-}
-
-.areaSet {
-  display: flex;
-  width: 100%;
+  background: #2D3646;
+  width: 25%;
   height: 100%;
 }
 
-.tagAreaClass {
-  user-select: none;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-  text-decoration: none;
-  color: #ecf0f1;
-  font-size: 60px;
-  font-family: "Segoe UI", sans-serif;
-  font-weight: bold;
+.titlebarClass {
+  display: flex;
+  height: 32px;
+  width: 100%;
+  -webkit-app-region: drag;
+}
+
+.titlebarSideA {
+  height: 100%;
+  width: 60%;
+}
+
+.titleTextBox {
+  height: 100%;
+  display: flex;
+}
+
+.titlebarSideA span {
+  margin: auto;
+  text-align: center;
+  font-family: "Open Sans Bold", sans-serif;
+  font-size: 13px;
+}
+
+.titlebarSideB {
+  height: 100%;
+  width: 50%;
+}
+
+.titleControls {
+  height: 100%;
+  width: 100%;
+  background: #2f5fb4;
+  display: flex;
+}
+
+.button {
+  -webkit-app-region: no-drag;
+  display: flex;
+  height: 100%;
+  width: 33.2%;
+}
+
+.button img {
+  margin: auto;
+}
+
+.buttonMin:hover {
+  background: rgba(186, 186, 186, 0.4);
+}
+
+.buttonMax:hover {
+  background: rgba(186, 186, 186, 0.4);
+}
+
+.buttonClo:hover {
+  background: #e33b3b;
+}
+
+.minb {
+  width: 13px;
+}
+
+.maxb {
+  width: 13px;
+}
+
+.clob {
+  width: 13px;
 }
 
 .slideBar {
-  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
   display: block;
-  background: white;
-  height: 84%;
-  width: 96%;
+  background: transpatent;
+  height: 74%;
+  width: 95%;
 }
 
 .allButtons {
-  background: white;
+  background: transpatent;
   width: 100%;
   height: 30%;
 }
@@ -720,7 +674,7 @@ tr {
 .listWorks {
   background: #34495e;
   width: 100%;
-  height: 70%;
+  height: 75%;
 }
 
 .titleListWorks {
@@ -728,10 +682,6 @@ tr {
   padding-top: 5px;
   padding-bottom: 5px;
   background: #34495e;
-  border-bottom: solid;
-  border-top: solid;
-  border-width: 3px;
-  border-color: #ffffff;
 }
 
 .tagTitleListWorksClass {
@@ -751,20 +701,21 @@ tr {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 34%;
+  height: 35%;
 }
 
 .smallButtons div {
   margin-bottom: auto;
   background: #34495e;
-  height: 55px;
-  width: 55px;
+  height: 51px;
+  width: 58px;
 }
 
 .bigButtons {
   display: flex;
   height: 66%;
   width: 100%;
+  margin-bottom: 2px;
   flex-direction: column;
   justify-content: flex-end;
 }
@@ -792,4 +743,30 @@ tr {
   color: #ffffff;
   font-family: "Segoe UI Semibold", sans-serif;
   font-size: 20px;
+}
+
+.areaButton {
+  margin: auto;
+  background: #34495e;
+  height: 12.5%;
+  width: 95%;
+}
+
+.areaSet {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.tagAreaClass {
+  user-select: none;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #ecf0f1;
+  font-size: 60px;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
 }

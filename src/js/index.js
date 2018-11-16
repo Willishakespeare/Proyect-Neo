@@ -9,61 +9,32 @@ var quanty = 0;
 var months = ["Ene", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec"];
 var demG;
 var dem;
+
 (function handleWindowControls() {
 
 
   document.onreadystatechange = () => {
     if (document.readyState == "complete") {
-      init();
       loadBoard();
     }
   };
 
-  function init() {
-    let window = remote.getCurrentWindow();
-    const minButton = document.getElementById('min-button'),
-      maxButton = document.getElementById('max-button'),
-      restoreButton = document.getElementById('restore-button'),
-      closeButton = document.getElementById('close-button');
-
-    minButton.addEventListener("click", event => {
-      window = remote.getCurrentWindow();
-      window.minimize();
-    });
 
 
-
-
-    restoreButton.addEventListener("click", event => {
-      window = remote.getCurrentWindow();
-      window.unmaximize();
-      toggleMaxRestoreButtons();
-    });
-
-    // Toggle maximise/restore buttons when maximisation/unmaximisation
-    // occurs by means other than button clicks e.g. double-clicking
-    // the title bar:
-    toggleMaxRestoreButtons();
-    window.on('maximize', toggleMaxRestoreButtons);
-    window.on('unmaximize', toggleMaxRestoreButtons);
-
-    closeButton.addEventListener("click", event => {
-      window = remote.getCurrentWindow();
-      window.close();
-    });
-
-    function toggleMaxRestoreButtons() {
-      window = remote.getCurrentWindow();
-      if (window.isMaximized()) {
-        maxButton.style.display = "none";
-        restoreButton.style.display = "flex";
-      } else {
-        restoreButton.style.display = "none";
-        maxButton.style.display = "flex";
-      }
-    }
-  }
 })();
+
+document.getElementById('min-button').addEventListener("click", event => {
+
+  let window = remote.getCurrentWindow();
+  window.minimize();
+});
+
+
+document.getElementById('close-button').addEventListener("click", event => {
+  let window = remote.getCurrentWindow();
+  window.close();
+});
+
 
 document.getElementById('buttonNew').addEventListener("click", event => {
   main.openWindow2()
