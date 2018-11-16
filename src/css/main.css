@@ -429,7 +429,6 @@ tr {
 .buttonPauseClass {
   background: #3498db;
   transition: transform .2s;
-  -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
 
@@ -541,11 +540,8 @@ tr {
   animation-duration: .5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   animation-iteration-count: linear;
-  -webkit-animation-iteration-count: linear;
-  -webkit-animation-name: bounce;
   animation-name: bounce;
   transform: scale(1.1);
 }
@@ -706,9 +702,60 @@ tr {
 
 .smallButtons div {
   margin-bottom: auto;
-  background: #34495e;
   height: 51px;
   width: 58px;
+}
+
+.b1Class {
+  padding-top: 2px;
+  border-bottom: 4px solid #1d62bd;
+  display: flex;
+  transition: transform .2s;
+  transition: 0.3s all ease;
+}
+
+.img1 {
+  margin: auto;
+  transform: rotate(50deg);
+  width: 35px;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.b1Class:hover {
+  border-bottom: 4px solid #bd221d;
+  background: rgba(70, 70, 70, 0.67);
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.b1Class:hover>.img1 {
+  animation-name: spin;
+  animation-duration: 800ms;
+  animation-iteration-count: linear;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(50deg);
+  }
+
+  39% {
+    transform: rotate(0deg);
+  }
+
+  40% {
+    transform: rotate(50deg);
+  }
+
+  70% {
+    transform: rotate(250deg);
+  }
+
+  100% {
+    transform: rotate(230deg);
+  }
 }
 
 .bigButtons {
