@@ -611,7 +611,7 @@ tr {
 .titleControls {
   height: 100%;
   width: 100%;
-  background: #2f5fb4;
+  background: #2D3646;
   display: flex;
 }
 
@@ -658,19 +658,19 @@ tr {
   display: block;
   background: transpatent;
   height: 74%;
-  width: 95%;
+  width: 100%;
 }
 
 .allButtons {
   background: transpatent;
   width: 100%;
-  height: 30%;
+  height: 15%;
 }
 
 .listWorks {
   background: #34495e;
   width: 100%;
-  height: 75%;
+  height: 70%;
 }
 
 .titleListWorks {
@@ -691,47 +691,208 @@ tr {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  transition: transform .2s;
+  transition: 0.3s all ease;
+}
+
+.allButtons:hover {
+  height: 37%;
+}
+
+.allButtons:hover>.bigButtons {
+  visibility: visible;
+  opacity: 1;
+}
+
+.allButtons:hover~.imgMore {
+  display: none;
+}
+
+.allButtons:hover~.imgMore:after {
+  content: "expand_less";
+}
+
+.showMoreButtons {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.imgMore {
+  margin-left: auto;
+  margin-right: auto;
+  color: #ffffff;
+  align-items: center;
+  font-size: 30px;
+  transition: transform .2s;
+  transition: 0.3s ease;
 }
 
 .smallButtons {
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  height: 35%;
+  width: 90%;
+  height: 30%;
+  transition: transform .2s;
+  transition: 0.3s all ease;
 }
 
 .smallButtons div {
   margin-bottom: auto;
-  height: 51px;
-  width: 58px;
+  height: 50px;
+  width: 50px;
 }
 
 .b1Class {
-  padding-top: 2px;
-  border-bottom: 4px solid #1d62bd;
+  width: 50px;
+  height: 50px;
+  transition: transform .2s;
+  transition: 0.3s all ease;
+}
+
+.bt1Class {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  background: #4073cf;
+  border-radius: 50%;
+  box-shadow: 3px 3px 0px #2a2a2a;
+  width: 100%;
+  height: 100%;
   transition: transform .2s;
   transition: 0.3s all ease;
 }
 
 .img1 {
-  margin: auto;
+  color: #ffffff;
   transform: rotate(50deg);
-  width: 35px;
+  align-items: center;
+  font-size: 30px;
   transition: transform .2s;
   transition: 0.3s ease;
 }
 
-.b1Class:hover {
-  border-bottom: 4px solid #bd221d;
-  background: rgba(70, 70, 70, 0.67);
+.bt1Class:hover {
+  background: #2d56a1;
   transition: transform .2s;
   transition: 0.3s ease;
 }
 
-.b1Class:hover>.img1 {
+.bt1Class:hover>.img1 {
   animation-name: spin;
-  animation-duration: 800ms;
+  animation-duration: 600ms;
+  animation-iteration-count: linear;
+  animation-timing-function: linear;
+}
+
+.bt2Class {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  background: #FF7043;
+  border-radius: 50%;
+  box-shadow: 3px 3px 0px #2a2a2a;
+  width: 100%;
+  height: 100%;
+  transition: transform .2s;
+  transition: 0.3s all ease;
+}
+
+.img2 {
+  color: #ffffff;
+  align-items: center;
+  font-size: 32px;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.bt2Class:hover {
+  background: #ff5722;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.bt2Class:hover>.img2 {
+  animation-name: jingle;
+  animation-duration: 500ms;
+  animation-iteration-count: linear;
+  animation-timing-function: linear;
+}
+
+.bt3Class {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  background: #EC407A;
+  border-radius: 50%;
+  box-shadow: 3px 3px 0px #2a2a2a;
+  width: 100%;
+  height: 100%;
+  transition: transform .2s;
+  transition: 0.3s all ease;
+}
+
+.img3 {
+  color: #ffffff;
+  align-items: center;
+  font-size: 30px;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.bt3Class:hover {
+  background: #e91e63;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.bt3Class:hover>.img3 {
+  animation-name: jingle;
+  animation-duration: 500ms;
+  animation-iteration-count: linear;
+  animation-timing-function: linear;
+}
+
+.bt4Class {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  background: #8D6E63;
+  border-radius: 50%;
+  box-shadow: 3px 3px 0px #2a2a2a;
+  width: 100%;
+  height: 100%;
+  transition: transform .2s;
+  transition: 0.3s all ease;
+}
+
+.img4 {
+  color: #ffffff;
+  align-items: center;
+  font-size: 40px;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.bt4Class:hover {
+  background: #5D4037;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.bt4Class:hover>.img4 {
+  animation-name: jingle2;
+  animation-duration: 600ms;
   animation-iteration-count: linear;
   animation-timing-function: linear;
 }
@@ -742,7 +903,7 @@ tr {
   }
 
   39% {
-    transform: rotate(0deg);
+    transform: rotate(100deg);
   }
 
   40% {
@@ -750,29 +911,228 @@ tr {
   }
 
   70% {
-    transform: rotate(250deg);
+    transform: rotate(-200deg);
   }
 
   100% {
-    transform: rotate(230deg);
+    transform: rotate(-120deg);
+  }
+}
+
+@keyframes jingle {
+  0% {
+    transform: rotate(20deg);
+  }
+
+  10% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(-25deg);
+  }
+
+  30% {
+    transform: rotate(0deg);
+  }
+
+  40% {
+    transform: rotate(15deg);
+  }
+
+  50% {
+    transform: rotate(-20deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  80% {
+    transform: rotate(15deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes jingle2 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(-50deg);
+  }
+
+  25% {
+    transform: rotate(-50deg);
+  }
+
+  50% {
+    transform: rotate(40deg);
+  }
+
+  60% {
+    transform: rotate(40deg);
+  }
+
+  80% {
+    transform: rotate(-30deg);
+  }
+
+  85% {
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
   }
 }
 
 .bigButtons {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+  transition: transform .2s;
+  transition: 0.3s all ease;
   display: flex;
   height: 66%;
-  width: 100%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2px;
   flex-direction: column;
   justify-content: flex-end;
+  transition: transform .2s;
+  transition: 0.3s all ease;
 }
 
 .bigButtons div {
-  margin-top: 2px;
-  margin-bottom: 2px;
-  background: #34495e;
   width: 100%;
-  height: 47px;
+  height: 45px;
+}
+
+.bigB1Class {
+  margin-top: auto;
+  margin-bottom: 4px;
+}
+
+.bigB2Class {
+  margin-bottom: auto;
+  margin-top: 4px;
+}
+
+.bgtClass {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  background: #66BB6A;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0px #2a2a2a;
+  width: 100%;
+  height: 100%;
+  transition: transform .2s;
+  transition: 0.3s all ease;
+}
+
+.bgtTextClass {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-family: "Open Sans SemiBold";
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.imgbg1 {
+  color: #ffffff;
+  margin: 0px 0px 0px 0px;
+  align-items: center;
+  font-size: 35px;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.bgtClass:hover {
+  background: #43A047;
+  transition: transform .2s;
+  transition: 0.3s all ease;
+}
+
+.bgtClass:hover>.imgbg1 {
+  animation-name: flag;
+  animation-duration: 900ms;
+  animation-iteration-count: linear;
+  animation-timing-function: linear;
+}
+
+.bgt2Class {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  background: #78909C;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0px #2a2a2a;
+  width: 100%;
+  height: 100%;
+  transition: transform .2s;
+  transition: 0.3s all ease;
+}
+
+.bgtText2Class {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-family: "Open Sans SemiBold";
+  font-size: 15px;
+  color: #ffffff;
+}
+
+.imgbg2 {
+  color: #ffffff;
+  margin: 0px 0px 0px 0px;
+  align-items: center;
+  font-size: 35px;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+@keyframes flag {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  20% {
+    transform: rotateY(-60deg);
+  }
+
+  30% {
+    transform: rotateY(-60deg);
+  }
+
+  60% {
+    transform: rotateY(360deg);
+  }
+
+  70% {
+    transform: rotateY(420deg);
+  }
+
+  80% {
+    transform: rotateY(420deg);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
 }
 
 .boxListWorksClass {
