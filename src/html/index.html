@@ -27,7 +27,7 @@
 					<table class="tableBoard" id="data_table" cellpadding="0" cellspacing="0" border="0">
 
 
-						<tr>
+						<!-- <tr>
 							<div class="cellContentAll">
 								<div class="cellContentTitle">
 									<span>William Jesus Covarrubias Ramos (98776) </span>
@@ -48,12 +48,27 @@
 									</div>
 									<div class="cellContentRight">
 										<div class="statusTag">
+											<div class="tagInProcess">
+												<span class="inProcess">En Proceso</span>
+											</div>
+										</div>
+										<div class="tagButtons ">
+											<div class="tabBoxIcons" ripple="ripple">
+												<i class="material-icons iconsTag ">open_in_new</i>
+											</div>
+											<div class="tabBoxIcons" ripple="ripple">
+												<i class="material-icons iconsTag">insert_comment</i>
+
+											</div>
+											<div class="tabBoxIcons" ripple="ripple">
+												<i class="material-icons iconsTag">more_vert</i>
+											</div>
 
 										</div>
 									</div>
 								</div>
 							</div>
-						</tr>
+						</tr> -->
 
 
 
@@ -63,24 +78,24 @@
 			</div>
 			<div class=" buttonBarClass" id="buttonBar">
 
-				<div class="buttonNewClass" id="buttonNew">
-					<img class="iconNew" src="../image/add.png" draggable="false"></img>
+				<div class="buttonNewClass" id="buttonNew" ripple="ripple">
+					<i class="material-icons iconNew">add_circle</i>
 					<span class=" textNew">INICIAR NUEVA ORDEN</span>
 				</div>
 
-				<div class="buttonRestartClass" id="buttonRestart">
-					<img class="iconRestart" src="" draggable="false"></img>
+				<div class="buttonRestartClass" id="buttonRestart" ripple="ripple">
+					<i class="material-icons iconRestart">play_arrow</i>
 					<span class=" textRestart">REANUDAR</span>
 				</div>
 
-				<div class="buttonPauseClass" id="buttonPause">
-					<span class=" textPause">PAUSAR ORDEN</span>
-					<img class="iconPause" src="" draggable="false"></img>
+				<div class="buttonPauseClass" id="buttonPause" ripple="ripple">
+					<span class=" textPause">PAUSAR</span>
+					<i class="material-icons iconPause">pause</i>
 				</div>
 
-				<div class="buttonCloseClass" id="buttonClose">
+				<div class="buttonCloseClass" id="buttonClose" ripple="ripple2">
 					<span class=" textClose">CERRAR ORDEN</span>
-					<img class="iconClose" src="../image/close.png" draggable="false"></img>
+					<i class="material-icons iconClose">cancel</i>
 				</div>
 			</div>
 		</div>
@@ -119,7 +134,7 @@
 
 
 						<div class="b1Class">
-							<button class="bt1Class" ripple="ripple">
+							<button class="bt1Class" ripple="ripple" id="btnLoop">
 								<i class="material-icons img1">loop</i>
 							</button>
 						</div>
@@ -160,10 +175,10 @@
 					</div>
 
 					<div class="showMoreButtons">
-						<i class="material-icons imgMore">expand_more</i>
+						<img class="iconArrowDown" src="../image/arrow.png" draggable="false"></img>
 					</div>
 				</div>
-				<div class="listWorks">
+				<div class="listWorks" ripple="ripple">
 					<div class="titleListWorks">
 						<a id="tagTitleListWorks" class="tagTitleListWorksClass" href="#">Ordenes en Proceso</a>
 					</div>
@@ -175,7 +190,7 @@
 			</div>
 			<div class="areaButton">
 
-				<div class="areaSet">
+				<div class="areaSet" ripple="ripple">
 					<a id="tagArea" class="tagAreaClass" href="#">HDS</a>
 				</div>
 			</div>

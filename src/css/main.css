@@ -76,7 +76,7 @@ p {
 }
 
 .leftSide {
-  background: #4073cf;
+  background: #2D3646;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -87,7 +87,7 @@ p {
 }
 
 .board {
-  background-color: #274375;
+  background-color: #34495e;
   margin: auto;
   display: flex;
   align-items: center;
@@ -119,7 +119,7 @@ tr {
   margin-bottom: 5px;
   borde border-radius: 5px;
   box-shadow: 0px 5px 20px #2e2e2e;
-  background: #f6f6f6;
+  background: #34495e;
   height: 105px;
   width: 98%;
   display: flex;
@@ -133,23 +133,23 @@ tr {
 }
 
 .cellContentTitle {
-  background-image: linear-gradient(to bottom right, #3c546b, #2c3e50);
+  background: #2D3646;
   height: 35%;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .cellContentTitle span {
-  font-family: "Segoe UI Semibold", sans-serif;
-  font-size: 23px;
-  margin-top: auto;
-  margin-bottom: auto;
+  font-family: "Open Sans Bold", sans-serif;
+  font-size: 22px;
+  margin: auto;
   padding-left: 10px;
 }
 
 .cellContentDown {
-  color: #34495e;
-  font-family: "Segoe UI", sans-serif;
-  font-weight: 500;
+  color: #ffffff;
+  font-family: "Open Sans SemiBold", sans-serif;
   font-size: 15px;
   height: 65%;
   width: 100%;
@@ -165,6 +165,10 @@ tr {
   padding-left: 10px;
 }
 
+.cellContentLeft span {
+  margin-right: 0px;
+}
+
 .cellContentMiddle {
   margin-top: 2px;
   display: flex;
@@ -175,19 +179,95 @@ tr {
 }
 
 .cellContentRight {
-  margin-top: 2px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  border-left: 1px solid #dfdfdf;
   height: 100%;
   width: 30%;
 }
 
 .statusTag {
-  background: #1e3db3;
-  width: 160px;
-  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tagInProcess {
+  margin: auto;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #952ecc;
+}
+
+.tagInPause {
+  margin: auto;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #3498db;
+}
+
+.tagInClosed {
+  margin: auto;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #2ecc71;
+}
+
+.tagInClosedLater {
+  margin: auto;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #ef5350;
+}
+
+.tagInLater {
+  margin: auto;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #ffb74d;
+}
+
+.inProcess {
+  margin: auto;
+}
+
+.tagButtons {
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: 50%;
+  height: 50%;
+  display: flex;
+}
+
+.tabBoxIcons {
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  border-radius: 50%;
+  height: 100%;
+  width: 35px;
+}
+
+.tabBoxIcons:hover {
+  background: #415a74;
+}
+
+.iconsTag {
+  margin: auto;
+  font-size: 25px;
 }
 
 ::-webkit-scrollbar {
@@ -236,7 +316,7 @@ tr {
 
 .buttonNewClass {
   height: 60%;
-  width: 250px;
+  width: 270px;
 }
 
 .buttonCloseClass {
@@ -256,110 +336,76 @@ tr {
   background: #2ecc71;
   transition: transform .2s;
   transition: 0.3s ease;
-}
-
-.iconNew {
-  user-select: none;
-  margin-left: auto;
-  width: 28px;
-  padding-bottom: 2px;
-  margin-right: 12px;
-  transition: transform .2s;
-  color: #c8c8c8;
-  font-size: 25px;
-  font-family: "Segoe UI Semibold", sans-serif;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-
-  20% {
-    transform: translateY(-5px) scale(1.05);
-  }
-
-  60% {
-    transform: translateY(3px) scale(1.06);
-  }
-
-  80% {
-    transform: translateY(3px) scale(1.1);
-  }
-
-  100% {
-    transform: translateY(0) scale(1.1);
-  }
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  transition-duration: .3s;
+  transition-property: box-shadow;
+  box-shadow: inset 0 0 0 4px #2ecc71, 0 0 1px rgba(0, 0, 0, 0)
 }
 
 .buttonNewClass:hover {
-  margin-left: auto;
-  margin-right: 60px;
-  width: 260px;
-  background: #27ae60;
+  box-shadow: inset 0 0 0 4px #2D3646, 0 0 1px rgba(0, 0, 0, 0)
 }
 
-.buttonNewClass:hover>.iconNew {
-  color: #114035;
-  animation-duration: .5s;
-  animation-fill-mode: both;
-  animation-timing-function: linear;
-  animation-iteration-count: linear;
-  animation-name: bounce;
-  transform: scale(1.1);
+.iconNew {
+  align-items: center;
+  user-select: none;
+  margin-left: 0px;
+  margin-right: 7px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-family: "Segoe UI Semibold", sans-serif;
+  transition: transform .2s;
+  transition: 0.3s ease;
 }
 
 .textNew {
-  margin-right: auto;
-  padding-bottom: 1px;
+  margin-right: 2px;
+  margin-top: auto;
+  margin-bottom: auto;
   user-select: none;
-  color: #ecf0f1;
+  color: #f1f1f1;
   font-size: 17px;
-  font-family: "Segoe UI Semibold", sans-serif;
+  font-family: "Open Sans Bold", sans-serif;
+  transition: transform .2s;
+  transition: 0.3s ease;
 }
 
-@keyframes bounce2 {
-  0%, {
-    opacity: 1;
-  }
-
-  20% {
-    opacity: .5;
-  }
-
-  60% {
-    opacity: 0;
-  }
-
-  80% {
-    opacity: .5;
-  }
-
-  100%, {
-    opacity: 1;
-  }
-}
-
-.buttonNewClass:hover>.textNew {
-  animation-duration: .3s;
+.buttonNewClass:hover>.iconNew {
+  color: #2D3646;
+  animation-duration: 800ms;
   animation-fill-mode: both;
   animation-timing-function: linear;
   animation-iteration-count: linear;
-  animation-name: bounce2;
-  transform: translateX(3px);
+  animation-name: spin2;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.buttonNewClass:hover>.textNew {
+  color: #2D3646;
 }
 
 /* ///////////////////////////////// */
 .buttonRestartClass {
+  margin-left: auto;
   background: #3498db;
-  border-style: solid;
-  border-width: 2px;
-  border-top: 0px;
-  border-bottom: 0px;
-  border-left: 1px;
-  border-color: #2980b9;
   transition: transform .2s;
   transition: 0.3s ease;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  box-shadow: inset 0 0 0 4px #3498db, 0 0 1px rgba(0, 0, 0, 0)
+}
+
+.buttonRestartClass:hover {
+  box-shadow: inset 0 0 0 4px #2D3646, 0 0 1px rgba(0, 0, 0, 0)
 }
 
 .textRestart {
@@ -374,107 +420,94 @@ tr {
 
 .iconRestart {
   user-select: none;
-  margin-left: auto;
-  width: 28px;
-  padding-bottom: 2px;
-  margin-right: -25px;
-  transition: transform .2s;
-  color: #c8c8c8;
-  font-size: 25px;
+  margin-left: 0px;
+  margin-right: 0px;
+  color: #ecf0f1;
+  font-size: 55px;
   font-family: "Segoe UI Semibold", sans-serif;
+  transition: transform .5s;
+  transition: 0.3s ease;
 }
 
 .buttonRestartClass:hover>.textRestart {
-  -webkit-animation-duration: .3s;
-  animation-duration: .3s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-iteration-count: linear;
-  -webkit-animation-iteration-count: linear;
-  -webkit-animation-name: bounce2;
-  animation-name: bounce2;
-  transform: translateX(3px) scale(1.04);
+  color: #2D3646;
+  transition: transform .5s;
+  transition: 0.3s ease;
 }
 
 .buttonRestartClass:hover {
-  margin-left: -20px;
-  width: 170px;
   background: #2980b9;
-  transform: scale(1.1);
-}
-
-.buttonRestartClass:hover>.iconRestart {
-  color: #114035;
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-iteration-count: linear;
-  -webkit-animation-iteration-count: linear;
-  -webkit-animation-name: bounce;
-  animation-name: bounce;
-  transform: scale(1.1);
-}
-
-.buttonRestartClass:hover>.iconRestart {
-  margin-right: 15px;
-  content: url('../image/play.png');
-}
-
-/* ///////////////////////////////// */
-.buttonPauseClass {
-  background: #3498db;
   transition: transform .2s;
   transition: 0.3s ease;
 }
 
+.buttonRestartClass:hover>.iconRestart {
+  color: #2D3646;
+  animation-duration: 800ms;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+  animation-iteration-count: linear;
+  animation-name: jingle;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+/* ///////////////////////////////// */
+.buttonPauseClass {
+  margin-left: 0px;
+  margin-right: 0px;
+  background: #3498db;
+  transition: transform .2s;
+  transition: 0.3s ease;
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  transition-duration: .3s;
+  transition-property: box-shadow;
+  box-shadow: inset 0 0 0 4px #3498db, 0 0 1px rgba(0, 0, 0, 0)
+}
+
 .buttonPauseClass:hover {
-  margin-right: -40px;
-  width: 210px;
+  box-shadow: inset 0 0 0 4px #2D3646, 0 0 1px rgba(0, 0, 0, 0)
+}
+
+.buttonPauseClass:hover {
   background: #2980b9;
-  transform: scale(1.1);
+  transition: transform .5s;
+  transition: 0.3s ease;
 }
 
 .textPause {
-  margin-left: 15px;
-  margin-right: auto;
+  margin-left: auto;
+  margin-right: 15px;
   padding-bottom: 1px;
   user-select: none;
   color: #ecf0f1;
   font-size: 17px;
   font-family: "Segoe UI Semibold", sans-serif;
+  transition: transform .5s;
+  transition: 0.3s ease;
 }
 
 .iconPause {
   user-select: none;
   margin-left: 0px;
-  width: 0px;
-  padding-bottom: 2px;
   margin-right: 0px;
-  transition: transform .2s;
-  color: #c8c8c8;
+  color: #ecf0f1;
+  font-size: 55px;
+  font-family: "Segoe UI Semibold", sans-serif;
+  transition: transform .5s;
+  transition: 0.3s ease;
 }
 
 .buttonPauseClass:hover>.textPause {
-  -webkit-animation-duration: .3s;
-  animation-duration: .3s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-iteration-count: linear;
-  -webkit-animation-iteration-count: linear;
-  -webkit-animation-name: bounce2;
-  animation-name: bounce2;
-  transform: translateX(3px) scale(1.04);
+  color: #2D3646;
+  transition: transform .5s;
+  transition: 0.3s ease;
 }
 
 .buttonPauseClass:hover>.buttonPause {
-  color: #114035;
+  color: #2D3646;
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
   -webkit-animation-fill-mode: both;
@@ -489,19 +522,14 @@ tr {
 }
 
 .buttonPauseClass:hover>.iconPause {
-  color: #114035;
-  animation-duration: .5s;
+  color: #2D3646;
+  animation-duration: 800ms;
   animation-fill-mode: both;
   animation-timing-function: linear;
   animation-iteration-count: linear;
-  animation-name: bounce;
-  transform: scale(1.1);
-}
-
-.buttonPauseClass:hover>.iconPause {
-  width: 28px;
-  margin-right: 12px;
-  content: url('../image/pause.png');
+  animation-name: jingle;
+  transition: transform .5s;
+  transition: 0.3s ease;
 }
 
 /* ///////////////////////////////// */
@@ -510,40 +538,44 @@ tr {
   margin-right: auto;
   background: #ef5350;
   transition: transform .2s;
-  -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  transition-duration: .3s;
+  transition-property: box-shadow;
+  box-shadow: inset 0 0 0 4px #ef5350, 0 0 1px rgba(0, 0, 0, 0)
+}
+
+.buttonCloseClass:hover {
+  box-shadow: inset 0 0 0 4px #2D3646, 0 0 1px rgba(0, 0, 0, 0)
 }
 
 .iconClose {
   user-select: none;
-  margin-left: auto;
-  width: 28px;
-  padding-bottom: 2px;
-  margin-right: 12px;
-  transition: transform .2s;
-  color: #c8c8c8;
-  font-size: 25px;
-  font-family: "Segoe UI Semibold", sans-serif;
+  margin-left: 10px;
+  margin-right: 5px;
+  color: #ecf0f1;
+  font-size: 40px;
+  transition: transform .5s;
+  transition: 0.3s ease;
 }
 
 .buttonCloseClass:hover {
-  margin-left: 60px;
-  margin-right: auto;
-  width: 210px;
-  background: #e53935;
-  transform: scale(1.1);
+  background: #d63936;
+  transition: transform .5s;
+  transition: 0.3s ease;
 }
 
 .buttonCloseClass:hover>.iconClose {
-  color: #114035;
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
-  -webkit-animation-fill-mode: both;
+  color: #2D3646;
+  animation-duration: 800ms;
   animation-fill-mode: both;
   animation-timing-function: linear;
   animation-iteration-count: linear;
-  animation-name: bounce;
-  transform: scale(1.1);
+  animation-name: spin2;
+  transition: transform .5s;
+  transition: 0.3s ease;
 }
 
 .textClose {
@@ -553,20 +585,14 @@ tr {
   color: #ecf0f1;
   font-size: 17px;
   font-family: "Segoe UI Semibold", sans-serif;
+  transition: transform .5s;
+  transition: 0.3s ease;
 }
 
 .buttonCloseClass:hover>.textClose {
-  -webkit-animation-duration: .3s;
-  animation-duration: .3s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-iteration-count: linear;
-  -webkit-animation-iteration-count: linear;
-  -webkit-animation-name: bounce2;
-  animation-name: bounce2;
-  transform: translateX(3px) scale(1.04);
+  color: #2D3646;
+  transition: transform .5s;
+  transition: 0.3s ease;
 }
 
 /* ///////////////////////////////// */
@@ -667,26 +693,6 @@ tr {
   height: 15%;
 }
 
-.listWorks {
-  background: #34495e;
-  width: 100%;
-  height: 70%;
-}
-
-.titleListWorks {
-  text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background: #34495e;
-}
-
-.tagTitleListWorksClass {
-  text-decoration: none;
-  color: #ecf0f1;
-  font-size: 20px;
-  font-family: "Segoe UI Semibold", sans-serif;
-}
-
 .allButtons {
   display: flex;
   justify-content: center;
@@ -706,10 +712,20 @@ tr {
 
 .allButtons:hover~.imgMore {
   display: none;
+  transition: transform .2s;
+  transition: 0.3s ease;
 }
 
-.allButtons:hover~.imgMore:after {
-  content: "expand_less";
+.allButtons:hover~.listWorks {
+  height: 69.5%;
+  transition: transform .2s;
+  transition: 0.3s all ease;
+}
+
+.allButtons:hover>.showMoreButtons img {
+  transform: rotate(180deg);
+  transition: transform .2s;
+  transition: 0.3s ease;
 }
 
 .showMoreButtons {
@@ -724,6 +740,15 @@ tr {
   color: #ffffff;
   align-items: center;
   font-size: 30px;
+  transition: transform .2s;
+  transition: 0.3s ease;
+}
+
+.iconArrowDown {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 6px;
+  width: 15px;
   transition: transform .2s;
   transition: 0.3s ease;
 }
@@ -916,6 +941,28 @@ tr {
 
   100% {
     transform: rotate(-120deg);
+  }
+}
+
+@keyframes spin2 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  39% {
+    transform: rotate(-50deg);
+  }
+
+  40% {
+    transform: rotate(50deg);
+  }
+
+  70% {
+    transform: rotate(230deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
   }
 }
 
@@ -1135,6 +1182,28 @@ tr {
   }
 }
 
+.listWorks {
+  background: #34495e;
+  width: 95%;
+  height: 91.5%;
+  transition: transform .2s;
+  transition: 0.3s all ease;
+}
+
+.titleListWorks {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #34495e;
+}
+
+.tagTitleListWorksClass {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-size: 20px;
+  font-family: "Segoe UI Semibold", sans-serif;
+}
+
 .boxListWorksClass {
   display: flex;
   flex-direction: column;
@@ -1153,9 +1222,9 @@ tr {
 }
 
 .areaButton {
-  margin: auto;
+  margin-top: auto;
   background: #34495e;
-  height: 12.5%;
+  height: 13%;
   width: 95%;
 }
 
@@ -1167,13 +1236,11 @@ tr {
 
 .tagAreaClass {
   user-select: none;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
+  margin: auto;
   text-decoration: none;
   color: #ecf0f1;
   font-size: 60px;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Open Sans bold", sans-serif;
   font-weight: bold;
+  text-shadow: 4px 4px 0px #2b2b2b;
 }

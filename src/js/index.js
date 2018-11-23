@@ -43,7 +43,10 @@ document.getElementById('buttonNew').addEventListener("click", event => {
 
 document.getElementById('buttonClose').addEventListener("click", event => {
 
+  document.getElementById('btnLoop').addEventListener("click", event => {
 
+    objFunction();
+  })
 
 
 
@@ -176,35 +179,304 @@ function objUserFunction() {
       }
       dem = dem + 1;
       demG = dem;
+      alert(dem);
+      alert(demG);
 
-      var table = document.getElementById("data_table");
-      var table_len = (table.rows.length);
-      var row = table.insertRow(table_len).outerHTML =
-        "<tr id = 'trTable'>" +
-        "<div class='cellContentAll' id='cellContentId" + dem + "'>" +
-        "<div class='cellContentTitle'>" +
-        "<span>" + neExtended + " (" + tag + ") " + " </span>" +
-        "</div>" +
-        "<div class='cellContentDown'>" +
-        "<div class='cellContentLeft'>" +
-        "<span>Wip (" + wip + ")</span>" +
-        "<span>Numero de parte (" + np + ")</span>" +
-        "<div class=''>" +
-        "<span>Cantidad: " + q + " " + "</span>" +
-        "<span>" + turnExtended + "</span>" +
-        "</div>" +
-        "</div>" +
-        "<div class='cellContentMiddle'>" +
-        "<span>Inicio: " + ds + " " + ts + "</span>" +
-        "<span>Finalizar antes de: " + de + " " + te + "</span>" +
-        "<span>Operadores: " + qe + "</span>" +
-        "</div>" +
-        "<div class='cellContentRight'>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</tr>";
-      document.getElementById("boxListWorks").insertAdjacentHTML('afterbegin', "<p id='demo" + dem + "'></p>");
+      if (st == 1) {
+        var table = document.getElementById("data_table");
+        var table_len = (table.rows.length);
+        var row = table.insertRow(table_len).outerHTML =
+          "<tr id = 'trTable" + dem + "'" + ">" +
+          "<div class='cellContentAll' id='cellContentId" + dem + "'>" +
+          "<div class='cellContentTitle'>" +
+          "<span>" + neExtended + " (" + tag + ") " + " </span>" +
+          "</div>" +
+          "<div class='cellContentDown'>" +
+          "<div class='cellContentLeft'>" +
+          "<span>Wip (" + wip + ")</span>" +
+          "<span>Numero de parte (" + np + ")</span>" +
+          "<div class=''>" +
+          "<span>Cantidad: " + q + " " + "</span>" +
+          "<span>" + turnExtended + "</span>" +
+          "</div>" +
+          "</div>" +
+          "<div class='cellContentMiddle'>" +
+          "<span>Inicio: " + ds + " " + ts + "</span>" +
+          "<span>Finalizar antes de: " + de + " " + te + "</span>" +
+          "<span>Operadores: " + qe + "</span>" +
+          "</div>" +
+          "<div class='cellContentRight'>" +
+          "<div class='statusTag'>" +
+          "<div class='tagInProcess'>" +
+          "<span class='inProcess'>En Proceso</span>" +
+          "</div>" +
+          "</div>" +
+          "<div class='tagButtons'>" +
+          "<div class='tabBoxIcons' ripple='ripple'>" +
+          "<i class='material-icons iconsTag'>open_in_new</i>" +
+          "</div>" +
+          "<div class='tabBoxIcons' ripple='ripple'>" +
+          "<i class='material-icons iconsTag'>insert_comment</i>" +
+          "</div>" +
+          "<div class='tabBoxIcons' ripple='ripple'>" +
+          "<i class='material-icons iconsTag'>more_vert</i>" +
+          "</div>" +
+
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</tr>";
+        document.getElementById("boxListWorks").insertAdjacentHTML('afterbegin', "<p id='demo" + dem + "'></p>");
+
+      }
+
+      if (st == 1) {
+        var table = document.getElementById("data_table");
+        var table_len = (table.rows.length);
+        var row = table.insertRow(table_len).outerHTML =
+          "<tr id = 'trTable" + dem + "'" + ">" +
+          "<div class='cellContentAll' id='cellContentId" + dem + "'>" +
+          "<div class='cellContentTitle'>" +
+          "<span>" + neExtended + " (" + tag + ") " + " </span>" +
+          "</div>" +
+          "<div class='cellContentDown'>" +
+          "<div class='cellContentLeft'>" +
+          "<span>Wip (" + wip + ")</span>" +
+          "<span>Numero de parte (" + np + ")</span>" +
+          "<div class=''>" +
+          "<span>Cantidad: " + q + " " + "</span>" +
+          "<span>" + turnExtended + "</span>" +
+          "</div>" +
+          "</div>" +
+          "<div class='cellContentMiddle'>" +
+          "<span>Inicio: " + ds + " " + ts + "</span>" +
+          "<span>Finalizar antes de: " + de + " " + te + "</span>" +
+          "<span>Operadores: " + qe + "</span>" +
+          "</div>" +
+          "<div class='cellContentRight'>" +
+          "<div class='statusTag'>" +
+          "<div class='tagInPause'>" +
+          "<span class='inProcess'>Orden Pausada</span>" +
+          "</div>" +
+          "</div>" +
+          "<div class='tagButtons'>" +
+          "<div class='tabBoxIcons' ripple='ripple'>" +
+          "<i class='material-icons iconsTag'>open_in_new</i>" +
+          "</div>" +
+          "<div class='tabBoxIcons' ripple='ripple'>" +
+          "<i class='material-icons iconsTag'>insert_comment</i>" +
+          "</div>" +
+          "<div class='tabBoxIcons' ripple='ripple'>" +
+          "<i class='material-icons iconsTag'>more_vert</i>" +
+          "</div>" +
+
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</tr>";
+        document.getElementById("boxListWorks").insertAdjacentHTML('afterbegin', "<p id='demo" + dem + "'></p>");
+
+      }
+
+      if (st == 1) {
+        var table = document.getElementById("data_table");
+        var table_len = (table.rows.length);
+        var row = table.insertRow(table_len).outerHTML =
+          "<tr id = 'trTable" + dem + "'" + ">" +
+          "<div class='cellContentAll' id='cellContentId" + dem + "'>" +
+          "<div class='cellContentTitle'>" +
+          "<span>" + neExtended + " (" + tag + ") " + " </span>" +
+          "</div>" +
+          "<div class='cellContentDown'>" +
+          "<div class='cellContentLeft'>" +
+          "<span>Wip (" + wip + ")</span>" +
+          "<span>Numero de parte (" + np + ")</span>" +
+          "<div class=''>" +
+          "<span>Cantidad: " + q + " " + "</span>" +
+          "<span>" + turnExtended + "</span>" +
+          "</div>" +
+          "</div>" +
+          "<div class='cellContentMiddle'>" +
+          "<span>Inicio: " + ds + " " + ts + "</span>" +
+          "<span>Finalizar antes de: " + de + " " + te + "</span>" +
+          "<span>Operadores: " + qe + "</span>" +
+          "</div>" +
+          "<div class='cellContentRight'>" +
+          "<div class='statusTag'>" +
+          "<div class='tagInLater'>" +
+          "<span class='inProcess'>Orden Tardia</span>" +
+          "</div>" +
+          "</div>" +
+          "<div class='tagButtons'>" +
+          "<div class='tabBoxIcons' ripple='ripple'>" +
+          "<i class='material-icons iconsTag'>open_in_new</i>" +
+          "</div>" +
+          "<div class='tabBoxIcons' ripple='ripple'>" +
+          "<i class='material-icons iconsTag'>insert_comment</i>" +
+          "</div>" +
+          "<div class='tabBoxIcons' ripple='ripple'>" +
+          "<i class='material-icons iconsTag'>more_vert</i>" +
+          "</div>" +
+
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</div>" +
+          "</tr>";
+        document.getElementById("boxListWorks").insertAdjacentHTML('afterbegin', "<p id='demo" + dem + "'></p>");
+
+      }
+
+      if (st == 1) {
+        if (df < 0) {
+          var table = document.getElementById("data_table");
+          var table_len = (table.rows.length);
+          var row = table.insertRow(table_len).outerHTML =
+            "<tr id = 'trTable" + dem + "'" + ">" +
+            "<div class='cellContentAll' id='cellContentId" + dem + "'>" +
+            "<div class='cellContentTitle'>" +
+            "<span>" + neExtended + " (" + tag + ") " + " </span>" +
+            "</div>" +
+            "<div class='cellContentDown'>" +
+            "<div class='cellContentLeft'>" +
+            "<span>Wip (" + wip + ")</span>" +
+            "<span>Numero de parte (" + np + ")</span>" +
+            "<div class=''>" +
+            "<span>Cantidad: " + q + " " + "</span>" +
+            "<span>" + turnExtended + "</span>" +
+            "</div>" +
+            "</div>" +
+            "<div class='cellContentMiddle'>" +
+            "<span>Inicio: " + ds + " " + ts + "</span>" +
+            "<span>Finalizar antes de: " + de + " " + te + "</span>" +
+            "<span>Operadores: " + qe + "</span>" +
+            "</div>" +
+            "<div class='cellContentRight'>" +
+            "<div class='statusTag'>" +
+            "<div class='tagInClosedLater'>" +
+            "<span class='inProcess'>Orden Cerrada ( - " + df + " min Despues)</span>" +
+            "</div>" +
+            "</div>" +
+            "<div class='tagButtons'>" +
+            "<div class='tabBoxIcons' ripple='ripple'>" +
+            "<i class='material-icons iconsTag'>open_in_new</i>" +
+            "</div>" +
+            "<div class='tabBoxIcons' ripple='ripple'>" +
+            "<i class='material-icons iconsTag'>insert_comment</i>" +
+            "</div>" +
+            "<div class='tabBoxIcons' ripple='ripple'>" +
+            "<i class='material-icons iconsTag'>more_vert</i>" +
+            "</div>" +
+
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</tr>";
+          document.getElementById("boxListWorks").insertAdjacentHTML('afterbegin', "<p id='demo" + dem + "'></p>");
+
+        }
+        if (df <= 0) {
+          var table = document.getElementById("data_table");
+          var table_len = (table.rows.length);
+          var row = table.insertRow(table_len).outerHTML =
+            "<tr id = 'trTable" + dem + "'" + ">" +
+            "<div class='cellContentAll' id='cellContentId" + dem + "'>" +
+            "<div class='cellContentTitle'>" +
+            "<span>" + neExtended + " (" + tag + ") " + " </span>" +
+            "</div>" +
+            "<div class='cellContentDown'>" +
+            "<div class='cellContentLeft'>" +
+            "<span>Wip (" + wip + ")</span>" +
+            "<span>Numero de parte (" + np + ")</span>" +
+            "<div class=''>" +
+            "<span>Cantidad: " + q + " " + "</span>" +
+            "<span>" + turnExtended + "</span>" +
+            "</div>" +
+            "</div>" +
+            "<div class='cellContentMiddle'>" +
+            "<span>Inicio: " + ds + " " + ts + "</span>" +
+            "<span>Finalizar antes de: " + de + " " + te + "</span>" +
+            "<span>Operadores: " + qe + "</span>" +
+            "</div>" +
+            "<div class='cellContentRight'>" +
+            "<div class='statusTag'>" +
+            "<div class='tagInClosedLater'>" +
+            "<span class='inProcess'>Orden Cerrada (" + df + " min Despues)</span>" +
+            "</div>" +
+            "</div>" +
+            "<div class='tagButtons'>" +
+            "<div class='tabBoxIcons' ripple='ripple'>" +
+            "<i class='material-icons iconsTag'>open_in_new</i>" +
+            "</div>" +
+            "<div class='tabBoxIcons' ripple='ripple'>" +
+            "<i class='material-icons iconsTag'>insert_comment</i>" +
+            "</div>" +
+            "<div class='tabBoxIcons' ripple='ripple'>" +
+            "<i class='material-icons iconsTag'>more_vert</i>" +
+            "</div>" +
+
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</tr>";
+          document.getElementById("boxListWorks").insertAdjacentHTML('afterbegin', "<p id='demo" + dem + "'></p>");
+
+        }
+
+        if (df >= 0) {
+          var table = document.getElementById("data_table");
+          var table_len = (table.rows.length);
+          var row = table.insertRow(table_len).outerHTML =
+            "<tr id = 'trTable" + dem + "'" + ">" +
+            "<div class='cellContentAll' id='cellContentId" + dem + "'>" +
+            "<div class='cellContentTitle'>" +
+            "<span>" + neExtended + " (" + tag + ") " + " </span>" +
+            "</div>" +
+            "<div class='cellContentDown'>" +
+            "<div class='cellContentLeft'>" +
+            "<span>Wip (" + wip + ")</span>" +
+            "<span>Numero de parte (" + np + ")</span>" +
+            "<div class=''>" +
+            "<span>Cantidad: " + q + " " + "</span>" +
+            "<span>" + turnExtended + "</span>" +
+            "</div>" +
+            "</div>" +
+            "<div class='cellContentMiddle'>" +
+            "<span>Inicio: " + ds + " " + ts + "</span>" +
+            "<span>Finalizar antes de: " + de + " " + te + "</span>" +
+            "<span>Operadores: " + qe + "</span>" +
+            "</div>" +
+            "<div class='cellContentRight'>" +
+            "<div class='statusTag'>" +
+            "<div class='tagInClosed'>" +
+            "<span class='inProcess'>Orden Cerrada (" + df + " min Antes)</span>" +
+            "</div>" +
+            "</div>" +
+            "<div class='tagButtons'>" +
+            "<div class='tabBoxIcons' ripple='ripple'>" +
+            "<i class='material-icons iconsTag'>open_in_new</i>" +
+            "</div>" +
+            "<div class='tabBoxIcons' ripple='ripple'>" +
+            "<i class='material-icons iconsTag'>insert_comment</i>" +
+            "</div>" +
+            "<div class='tabBoxIcons' ripple='ripple'>" +
+            "<i class='material-icons iconsTag'>more_vert</i>" +
+            "</div>" +
+
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</tr>";
+          document.getElementById("boxListWorks").insertAdjacentHTML('afterbegin', "<p id='demo" + dem + "'></p>");
+
+        }
+      }
+
 
     }
 

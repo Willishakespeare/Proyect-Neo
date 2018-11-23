@@ -21,9 +21,9 @@
     rippler = document.createElement('span');
     size = ripple.offsetWidth;
     pos = ripple.getBoundingClientRect();
-    x = e.pageX - pos.left - (size / 2);
-    y = e.pageY - pos.top - (size / 2);
-    style = 'top:' + y + 'px; left: ' + x + 'px; height: ' + size + 'px; width: ' + size + 'px;';
+    x = e.pageX - pos.left - (size);
+    y = e.pageY - pos.top - (size);
+    style = 'top:' + y + 'px; left: ' + x + 'px; height: ' + size * 2 + 'px; width: ' + size * 2 + 'px;';
     ripple.rippleContainer.appendChild(rippler);
     return rippler.setAttribute('style', style);
   };
@@ -40,8 +40,8 @@
     ripple = ripples[i];
     rippleContainer = document.createElement('div');
     rippleContainer.className = 'ripple--container';
-    ripple.addEventListener('mousedown', showRipple);
-    ripple.addEventListener('mouseup', debounce(cleanUp, 1500));
+    ripple.addEventListener('mouseup', showRipple);
+    ripple.addEventListener('mousedown', debounce(cleanUp, 2000));
     ripple.rippleContainer = rippleContainer;
     ripple.appendChild(rippleContainer);
   }
