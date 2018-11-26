@@ -43,14 +43,13 @@ document.getElementById('buttonNew').addEventListener("click", event => {
 
 document.getElementById('buttonClose').addEventListener("click", event => {
 
-  document.getElementById('btnLoop').addEventListener("click", event => {
-
-    objFunction();
-  })
-
-
-
 });
+
+document.getElementById('btnLoop').addEventListener("click", event => {
+  alert(Object.size(obj));
+  // loadBoard();
+})
+
 
 function loadBoard() {
   var d = new Date();
@@ -103,6 +102,7 @@ function objFunction() {
     } else {
 
       objUser = record;
+
       objUserFunction();
 
     }
@@ -115,15 +115,12 @@ function objUserFunction() {
   dem = 0;
 
 
-  for (let z = 1; z <= demG; z++) {
-    var elmtTable = document.getElementById("cellContentId" + z);
-    elmtTable.remove();
-  }
-  for (let z = 1; z <= demG; z++) {
-    var elmtTable = document.getElementById("demo" + z);
-    elmtTable.remove();
-  }
+  for (let z = 1; z <= Object.size(obj) - 1; z++) {
 
+    document.getElementById("trTable" + z).remove();
+    document.getElementById("demo" + z).remove();
+    document.getElementById("cellContentId" + z).remove();
+  }
 
   let size = Object.size(obj);
   if (size > quanty) {
@@ -179,8 +176,6 @@ function objUserFunction() {
       }
       dem = dem + 1;
       demG = dem;
-      alert(dem);
-      alert(demG);
 
       if (st == 1) {
         var table = document.getElementById("data_table");
@@ -231,7 +226,7 @@ function objUserFunction() {
 
       }
 
-      if (st == 1) {
+      if (st == 2) {
         var table = document.getElementById("data_table");
         var table_len = (table.rows.length);
         var row = table.insertRow(table_len).outerHTML =
@@ -280,7 +275,7 @@ function objUserFunction() {
 
       }
 
-      if (st == 1) {
+      if (st == 3) {
         var table = document.getElementById("data_table");
         var table_len = (table.rows.length);
         var row = table.insertRow(table_len).outerHTML =
@@ -329,56 +324,8 @@ function objUserFunction() {
 
       }
 
-      if (st == 1) {
+      if (st == 4) {
         if (df < 0) {
-          var table = document.getElementById("data_table");
-          var table_len = (table.rows.length);
-          var row = table.insertRow(table_len).outerHTML =
-            "<tr id = 'trTable" + dem + "'" + ">" +
-            "<div class='cellContentAll' id='cellContentId" + dem + "'>" +
-            "<div class='cellContentTitle'>" +
-            "<span>" + neExtended + " (" + tag + ") " + " </span>" +
-            "</div>" +
-            "<div class='cellContentDown'>" +
-            "<div class='cellContentLeft'>" +
-            "<span>Wip (" + wip + ")</span>" +
-            "<span>Numero de parte (" + np + ")</span>" +
-            "<div class=''>" +
-            "<span>Cantidad: " + q + " " + "</span>" +
-            "<span>" + turnExtended + "</span>" +
-            "</div>" +
-            "</div>" +
-            "<div class='cellContentMiddle'>" +
-            "<span>Inicio: " + ds + " " + ts + "</span>" +
-            "<span>Finalizar antes de: " + de + " " + te + "</span>" +
-            "<span>Operadores: " + qe + "</span>" +
-            "</div>" +
-            "<div class='cellContentRight'>" +
-            "<div class='statusTag'>" +
-            "<div class='tagInClosedLater'>" +
-            "<span class='inProcess'>Orden Cerrada ( - " + df + " min Despues)</span>" +
-            "</div>" +
-            "</div>" +
-            "<div class='tagButtons'>" +
-            "<div class='tabBoxIcons' ripple='ripple'>" +
-            "<i class='material-icons iconsTag'>open_in_new</i>" +
-            "</div>" +
-            "<div class='tabBoxIcons' ripple='ripple'>" +
-            "<i class='material-icons iconsTag'>insert_comment</i>" +
-            "</div>" +
-            "<div class='tabBoxIcons' ripple='ripple'>" +
-            "<i class='material-icons iconsTag'>more_vert</i>" +
-            "</div>" +
-
-            "</div>" +
-            "</div>" +
-            "</div>" +
-            "</div>" +
-            "</tr>";
-          document.getElementById("boxListWorks").insertAdjacentHTML('afterbegin', "<p id='demo" + dem + "'></p>");
-
-        }
-        if (df <= 0) {
           var table = document.getElementById("data_table");
           var table_len = (table.rows.length);
           var row = table.insertRow(table_len).outerHTML =

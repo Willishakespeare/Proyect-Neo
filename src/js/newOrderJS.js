@@ -232,9 +232,43 @@ document.getElementById("buttonSaveOrder").addEventListener("click", function() 
 
   } else {
 
+    var Datastore = require('nedb'),
+      db = new Datastore({
+        filename: "//192.168.1.206/comun/NO BORRAR/Produccion P28/Plan de Produccion/Proyect Neo/produccion/" + d.getFullYear() + "/" + months[d.getMonth()] + "/" + d.getDate() + ".db",
+        autoload: true
+      });
+
+    db.find({
+      wip: wip
+    }, function(err, record) {
+      if (err) {}
+
+
+      if (isEmpty(record)) {
+        save_to_data_base();
+
+      } else {
+
+        objU = record;
+        let xrec = objU[0];
+        alert(xrec["wip"]);
+        if (xrec["wip"] == wip) {
+          let Data = "La Orden Ya Se Registro";
+          ipcRenderer.send('request-update-label-in-second-window', Data)
+
+        } else {
+          save_to_data_base();
+        }
 
 
 
+      }
+    });
+
+
+  }
+
+  function save_to_data_base() {
     var Datastore = require('nedb'),
       db = new Datastore({
         filename: '//192.168.1.206/comun/NO BORRAR/Produccion P28/Plan de Produccion/Proyect Neo/database/numberParts.db',
@@ -256,7 +290,6 @@ document.getElementById("buttonSaveOrder").addEventListener("click", function() 
         do_something_when_you_get_your_result();
       }
     });
-
   }
 
 

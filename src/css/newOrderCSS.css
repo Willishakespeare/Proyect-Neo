@@ -26,11 +26,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", sans-serif;
-  background: #254053;
+  background: #2D3646;
   color: #FFF;
-  border-bottom: 5px solid #254053;
-  border-right: 5px solid #254053;
-  border-left: 5px solid #254053;
+  border-bottom: 5px solid #2D3646;
+  border-right: 5px solid #2D3646;
+  border-left: 5px solid #2D3646;
 }
 
 h1 {
@@ -50,7 +50,7 @@ p {
   height: 32px;
   width: calc(100%-2);
   /*Compensate for body 1px border*/
-  background: #254053;
+  background: #2D3646;
   margin: auto;
   color: #FFF;
 }
@@ -168,7 +168,7 @@ p {
   padding: 0;
   /* background: #2ecc71;
     background: #254053; */
-  background: #254053;
+  background: #2D3646;
   width: 100%;
   height: calc(100% - 32px);
 }
@@ -241,11 +241,11 @@ p {
   padding-left: 10px;
   height: 40px;
   width: 300px;
-  background: #1F3544;
+  background: #34495e;
   color: #ebebeb;
   font-family: "Segoe UI Semibold", sans-serif;
   font-size: 15px;
-  border: 3px solid #34495e;
+  border: 3px solid #1f2b38;
   transition: transform .2s;
   transition: 0.3s ease;
 }
@@ -284,8 +284,8 @@ p {
   font-size: 20px;
   text-align-last: center;
   text-align: center;
-  background: #1F3544;
-  border: 3px solid #34495e;
+  background: #34495e;
+  border: 3px solid #1f2b38;
   width: auto;
   transition: transform .2s;
   transition: 0.3s ease;
@@ -343,9 +343,9 @@ p {
   height: 40px;
   width: 45px;
   padding-left: 10px;
-  background: #1F3544;
+  background: #34495e;
   color: #ebebeb;
-  border: 3px solid #34495e;
+  border: 3px solid #1f2b38;
   font-family: "Segoe UI Semibold", sans-serif;
   font-size: 15px;
   transition: transform .2s;
@@ -375,10 +375,10 @@ p {
 .qInputUpClass {
   height: 20px;
   width: 20px;
-  background: #1F3544;
-  border-top: 3px solid #34495e;
-  border-right: 3px solid #34495e;
-  border-bottom: 1px solid #34495e;
+  background: #34495e;
+  border-top: 3px solid #1f2b38;
+  border-right: 3px solid #1f2b38;
+  border-bottom: 1px solid #1f2b38;
   transition: transform .2s;
   transition: 0.3s ease;
 }
@@ -398,10 +398,10 @@ p {
 .qInputDownClass {
   height: 20px;
   width: 20px;
-  background: #1F3544;
-  border-top: 1px solid #34495e;
-  border-right: 3px solid #34495e;
-  border-bottom: 3px solid #34495e;
+  background: #34495e;
+  border-top: 1px solid #1f2b38;
+  border-right: 3px solid #1f2b38;
+  border-bottom: 3px solid #1f2b38;
   transition: transform .2s;
   transition: 0.3s ease;
 }

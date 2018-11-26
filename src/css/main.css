@@ -338,14 +338,15 @@ tr {
   transition: 0.3s ease;
   display: inline-block;
   vertical-align: middle;
-  transform: perspective(1px) translateZ(0);
-  transition-duration: .3s;
-  transition-property: box-shadow;
-  box-shadow: inset 0 0 0 4px #2ecc71, 0 0 1px rgba(0, 0, 0, 0)
+  transition: transform .2s;
+  transition: 0.3s ease;
+  border-radius: 2px;
 }
 
 .buttonNewClass:hover {
-  box-shadow: inset 0 0 0 4px #2D3646, 0 0 1px rgba(0, 0, 0, 0)
+  background: #1ab35b;
+  transition: transform .2s;
+  transition: 0.3s ease;
 }
 
 .iconNew {
@@ -373,7 +374,6 @@ tr {
 }
 
 .buttonNewClass:hover>.iconNew {
-  color: #2D3646;
   animation-duration: 800ms;
   animation-fill-mode: both;
   animation-timing-function: linear;
@@ -381,10 +381,6 @@ tr {
   animation-name: spin2;
   transition: transform .2s;
   transition: 0.3s ease;
-}
-
-.buttonNewClass:hover>.textNew {
-  color: #2D3646;
 }
 
 /* ///////////////////////////////// */
@@ -395,17 +391,9 @@ tr {
   transition: 0.3s ease;
   display: inline-block;
   vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  -webkit-transition-duration: .3s;
-  transition-duration: .3s;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  box-shadow: inset 0 0 0 4px #3498db, 0 0 1px rgba(0, 0, 0, 0)
-}
-
-.buttonRestartClass:hover {
-  box-shadow: inset 0 0 0 4px #2D3646, 0 0 1px rgba(0, 0, 0, 0)
+  transition: transform .2s;
+  transition: 0.3s ease;
+  border-radius: 2px;
 }
 
 .textRestart {
@@ -422,7 +410,6 @@ tr {
   user-select: none;
   margin-left: 0px;
   margin-right: 0px;
-  color: #ecf0f1;
   font-size: 55px;
   font-family: "Segoe UI Semibold", sans-serif;
   transition: transform .5s;
@@ -430,7 +417,6 @@ tr {
 }
 
 .buttonRestartClass:hover>.textRestart {
-  color: #2D3646;
   transition: transform .5s;
   transition: 0.3s ease;
 }
@@ -442,7 +428,6 @@ tr {
 }
 
 .buttonRestartClass:hover>.iconRestart {
-  color: #2D3646;
   animation-duration: 800ms;
   animation-fill-mode: both;
   animation-timing-function: linear;
@@ -461,14 +446,8 @@ tr {
   transition: 0.3s ease;
   display: inline-block;
   vertical-align: middle;
-  transform: perspective(1px) translateZ(0);
-  transition-duration: .3s;
-  transition-property: box-shadow;
-  box-shadow: inset 0 0 0 4px #3498db, 0 0 1px rgba(0, 0, 0, 0)
-}
-
-.buttonPauseClass:hover {
-  box-shadow: inset 0 0 0 4px #2D3646, 0 0 1px rgba(0, 0, 0, 0)
+  transition: transform .2s;
+  transition: 0.3s ease;
 }
 
 .buttonPauseClass:hover {
@@ -493,7 +472,6 @@ tr {
   user-select: none;
   margin-left: 0px;
   margin-right: 0px;
-  color: #ecf0f1;
   font-size: 55px;
   font-family: "Segoe UI Semibold", sans-serif;
   transition: transform .5s;
@@ -501,13 +479,11 @@ tr {
 }
 
 .buttonPauseClass:hover>.textPause {
-  color: #2D3646;
   transition: transform .5s;
   transition: 0.3s ease;
 }
 
 .buttonPauseClass:hover>.buttonPause {
-  color: #2D3646;
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
   -webkit-animation-fill-mode: both;
@@ -522,7 +498,6 @@ tr {
 }
 
 .buttonPauseClass:hover>.iconPause {
-  color: #2D3646;
   animation-duration: 800ms;
   animation-fill-mode: both;
   animation-timing-function: linear;
@@ -541,14 +516,8 @@ tr {
   transition: 0.3s ease;
   display: inline-block;
   vertical-align: middle;
-  transform: perspective(1px) translateZ(0);
-  transition-duration: .3s;
-  transition-property: box-shadow;
-  box-shadow: inset 0 0 0 4px #ef5350, 0 0 1px rgba(0, 0, 0, 0)
-}
-
-.buttonCloseClass:hover {
-  box-shadow: inset 0 0 0 4px #2D3646, 0 0 1px rgba(0, 0, 0, 0)
+  transition: transform .2s;
+  transition: 0.3s ease;
 }
 
 .iconClose {
@@ -568,7 +537,6 @@ tr {
 }
 
 .buttonCloseClass:hover>.iconClose {
-  color: #2D3646;
   animation-duration: 800ms;
   animation-fill-mode: both;
   animation-timing-function: linear;
@@ -590,7 +558,6 @@ tr {
 }
 
 .buttonCloseClass:hover>.textClose {
-  color: #2D3646;
   transition: transform .5s;
   transition: 0.3s ease;
 }
