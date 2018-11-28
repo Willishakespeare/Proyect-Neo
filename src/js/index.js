@@ -438,7 +438,7 @@ function objUserFunction() {
 // Update the count down every 1 second
 var x = setInterval(function() {
 
-  for (let x = 1; x <= demG; x++) {
+  for (let x = 1; x <= Object.size(obj); x++) {
 
     let xrec = obj[x - 1];
     var rest = xrec["de"].split("/");
@@ -459,10 +459,10 @@ var x = setInterval(function() {
 
     document.getElementById("demo" + x).innerHTML = days + "d " + hours + "h " +
       minutes + "m " + seconds + "s ";
-
     if (distance < 0) {
       clearInterval(x);
-      document.getElementById("demo").innerHTML = "EXPIRED";
+
+      document.getElementById("demo" + x).innerHTML = "EXPIRED";
 
     }
 
