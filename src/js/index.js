@@ -139,38 +139,46 @@ function objUserFunction() {
       let ts = objSource["ts"];
       let te = objSource["te"];
       let st = objSource["st"];
-      let df = objSource["df"]
+      let df = objSource["df"];
+      let gen;
       let tag;
-      let turnExtended;
-
+      let turnExtended1;
+      let turnExtended2;
       let varFound;
 
       if (turn == 1) {
-        turnExtended = "Turno: 1 (6:40AM - 4:30PM)"
+        turnExtended1 = "Turno: 1"
+        turnExtended2 = "(6:40AM - 4:30PM)"
       }
       if (turn == 2) {
-        turnExtended = "Turno 2 (4:30AM - 1:40PM)"
+        turnExtended1 = "Turno 2"
+        turnExtended2 = "(4:30AM - 1:40PM)"
       }
       if (turn == 3) {
-        turnExtended = "Turno 3 (6:40AM - 6:40PM)"
+        turnExtended1 = "Turno 3"
+        turnExtended2 = "(6:40AM - 6:40PM)"
       }
       if (turn == 3) {
-        turnExtended = "Turno 4 (6:40AM - 6:40PM)"
+        turnExtended1 = "Turno 4"
+        turnExtended2 = "(6:40AM - 6:40PM)"
       }
 
       for (let x in objUser) {
         let xrec = objUser[x];
         let mtkTag = xrec["mtkTag"];
         let baeTag = xrec["baeTag"];
+
         if (mtkTag == ne || baeTag == ne) {
           neExtended = xrec["name"];
           tag = xrec["tag"];
+          gen = xrec["gen"];
           varFound = true;
         }
       }
 
       if (varFound = false) {
         user = "Usuario no Registrado";
+        gen = xrec["gen"];
         tag = ne;
 
       }
@@ -182,33 +190,59 @@ function objUserFunction() {
         var table_len = (table.rows.length);
         var row = table.insertRow(table_len).outerHTML =
           "<tr id = 'trTable" + dem + "'" + ">" +
-          "<div class='cellContentAll' id='cellContentId" + dem + "'>" +
+          "	<div class='cellContentAll'>" +
           "<div class='cellContentTitle'>" +
-          "<span>" + neExtended + " (" + tag + ") " + " </span>" +
+          "	<span>" + neExtended + "</span>" +
           "</div>" +
           "<div class='cellContentDown'>" +
-          "<div class='cellContentLeft'>" +
-          "<span>Wip (" + wip + ")</span>" +
-          "<span>Numero de parte (" + np + ")</span>" +
-          "<div class=''>" +
-          "<span>Cantidad: " + q + " " + "</span>" +
-          "<span>" + turnExtended + "</span>" +
+          "<div class='cellContentIcon'>" +
+          "<img class='cellContentImage ' src='../image/boardCards/user" + gen + ".png' draggable='false'></img>" +
           "</div>" +
+          "<div class='cellContentDivider'>" +
+          "</div>" +
+          "<div class='cellContentLeft'>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Wip:</span>" +
+          "<span class='cellContentText2'>(" + wip + ")</span>" +
+          "</div>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Numero de Parte:</span>" +
+          "<span class='cellContentText2'>" + np + "</span>" +
+          "</div>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>" + turnExtended1 + ":</span>" +
+          "<span class='cellContentText2'> " + turnExtended2 + "</span>" +
+          "</div>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Cantidad:</span>" +
+          "<span class='cellContentText2'> " + q + "</span>" +
+          "</div>" +
+          "</div>" +
+          "<div class='cellContentDivider'>" +
           "</div>" +
           "<div class='cellContentMiddle'>" +
-          "<span>Inicio: " + ds + " " + ts + "</span>" +
-          "<span>Finalizar antes de: " + de + " " + te + "</span>" +
-          "<span>Operadores: " + qe + "</span>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Inicio:</span>" +
+          "<span class='cellContentText2'> " + ds + " " + ts + "</span>" +
+          "</div>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Finalizar Antes de:</span>" +
+          "<span class='cellContentText2'>" + de + " " + te + "</span>" +
+          "</div>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Operadores:</span>" +
+          "<span class='cellContentText2'> " + qe + "</span>" +
+          "</div>" +
+          "</div>" +
+          "<div class='cellContentDivider'>" +
           "</div>" +
           "<div class='cellContentRight'>" +
-          "<div class='statusTag'>" +
           "<div class='tagInProcess'>" +
-          "<span class='inProcess'>En Proceso</span>" +
+          "<span class='statusTag'>En Proceso</span>" +
           "</div>" +
-          "</div>" +
-          "<div class='tagButtons'>" +
+          "<div class='tagButtons '>" +
           "<div class='tabBoxIcons' ripple='ripple'>" +
-          "<i class='material-icons iconsTag'>open_in_new</i>" +
+          "<i class='material-icons iconsTag '>open_in_new</i>" +
           "</div>" +
           "<div class='tabBoxIcons' ripple='ripple'>" +
           "<i class='material-icons iconsTag'>insert_comment</i>" +
@@ -216,12 +250,13 @@ function objUserFunction() {
           "<div class='tabBoxIcons' ripple='ripple'>" +
           "<i class='material-icons iconsTag'>more_vert</i>" +
           "</div>" +
-
-          "</div>" +
           "</div>" +
           "</div>" +
           "</div>" +
           "</tr>";
+
+
+
         document.getElementById("boxListWorks").insertAdjacentHTML('afterbegin', "<p id='demo" + dem + "'></p>");
 
       }
@@ -231,41 +266,65 @@ function objUserFunction() {
         var table_len = (table.rows.length);
         var row = table.insertRow(table_len).outerHTML =
           "<tr id = 'trTable" + dem + "'" + ">" +
-          "<div class='cellContentAll' id='cellContentId" + dem + "'>" +
+          "	<div class='cellContentAll'>" +
           "<div class='cellContentTitle'>" +
-          "<span>" + neExtended + " (" + tag + ") " + " </span>" +
+          "	<span>" + neExtended + "</span>" +
           "</div>" +
           "<div class='cellContentDown'>" +
-          "<div class='cellContentLeft'>" +
-          "<span>Wip (" + wip + ")</span>" +
-          "<span>Numero de parte (" + np + ")</span>" +
-          "<div class=''>" +
-          "<span>Cantidad: " + q + " " + "</span>" +
-          "<span>" + turnExtended + "</span>" +
+          "<div class='cellContentIcon'>" +
+          "<img class='cellContentImage ' src='../image/boardCards/user" + gen + ".png' draggable='false'></img>" +
           "</div>" +
+          "<div class='cellContentDivider'>" +
+          "</div>" +
+          "<div class='cellContentLeft'>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Wip:</span>" +
+          "<span class='cellContentText2'>(" + wip + ")</span>" +
+          "</div>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Numero de Parte:</span>" +
+          "<span class='cellContentText2'>" + np + "</span>" +
+          "</div>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>" + turnExtended1 + ":</span>" +
+          "<span class='cellContentText2'> " + turnExtended2 + "</span>" +
+          "</div>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Cantidad:</span>" +
+          "<span class='cellContentText2'> " + q + "</span>" +
+          "</div>" +
+          "</div>" +
+          "<div class='cellContentDivider'>" +
           "</div>" +
           "<div class='cellContentMiddle'>" +
-          "<span>Inicio: " + ds + " " + ts + "</span>" +
-          "<span>Finalizar antes de: " + de + " " + te + "</span>" +
-          "<span>Operadores: " + qe + "</span>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Inicio:</span>" +
+          "<span class='cellContentText2'> " + ds + " " + ts + "</span>" +
+          "</div>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Finalizar Antes de:</span>" +
+          "<span class='cellContentText2'>" + de + " " + te + "</span>" +
+          "</div>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Operadores:</span>" +
+          "<span class='cellContentText2'> " + qe + "</span>" +
+          "</div>" +
+          "</div>" +
+          "<div class='cellContentDivider'>" +
           "</div>" +
           "<div class='cellContentRight'>" +
-          "<div class='statusTag'>" +
           "<div class='tagInPause'>" +
-          "<span class='inProcess'>Orden Pausada</span>" +
+          "<span class='statusTag'>Orden Pausada</span>" +
           "</div>" +
-          "</div>" +
-          "<div class='tagButtons'>" +
+          "<div class='tagButtons '>" +
           "<div class='tabBoxIcons' ripple='ripple'>" +
-          "<i class='material-icons iconsTag'>open_in_new</i>" +
+          "<i class='material-icons iconsTag '>open_in_new</i>" +
           "</div>" +
           "<div class='tabBoxIcons' ripple='ripple'>" +
           "<i class='material-icons iconsTag'>insert_comment</i>" +
           "</div>" +
           "<div class='tabBoxIcons' ripple='ripple'>" +
           "<i class='material-icons iconsTag'>more_vert</i>" +
-          "</div>" +
-
           "</div>" +
           "</div>" +
           "</div>" +
@@ -280,41 +339,65 @@ function objUserFunction() {
         var table_len = (table.rows.length);
         var row = table.insertRow(table_len).outerHTML =
           "<tr id = 'trTable" + dem + "'" + ">" +
-          "<div class='cellContentAll' id='cellContentId" + dem + "'>" +
+          "	<div class='cellContentAll'>" +
           "<div class='cellContentTitle'>" +
-          "<span>" + neExtended + " (" + tag + ") " + " </span>" +
+          "	<span>" + neExtended + "</span>" +
           "</div>" +
           "<div class='cellContentDown'>" +
-          "<div class='cellContentLeft'>" +
-          "<span>Wip (" + wip + ")</span>" +
-          "<span>Numero de parte (" + np + ")</span>" +
-          "<div class=''>" +
-          "<span>Cantidad: " + q + " " + "</span>" +
-          "<span>" + turnExtended + "</span>" +
+          "<div class='cellContentIcon'>" +
+          "<img class='cellContentImage ' src='../image/boardCards/user" + gen + ".png' draggable='false'></img>" +
           "</div>" +
+          "<div class='cellContentDivider'>" +
+          "</div>" +
+          "<div class='cellContentLeft'>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Wip:</span>" +
+          "<span class='cellContentText2'>(" + wip + ")</span>" +
+          "</div>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Numero de Parte:</span>" +
+          "<span class='cellContentText2'>" + np + "</span>" +
+          "</div>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>" + turnExtended1 + ":</span>" +
+          "<span class='cellContentText2'> " + turnExtended2 + "</span>" +
+          "</div>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Cantidad:</span>" +
+          "<span class='cellContentText2'> " + q + "</span>" +
+          "</div>" +
+          "</div>" +
+          "<div class='cellContentDivider'>" +
           "</div>" +
           "<div class='cellContentMiddle'>" +
-          "<span>Inicio: " + ds + " " + ts + "</span>" +
-          "<span>Finalizar antes de: " + de + " " + te + "</span>" +
-          "<span>Operadores: " + qe + "</span>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Inicio:</span>" +
+          "<span class='cellContentText2'> " + ds + " " + ts + "</span>" +
+          "</div>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Finalizar Antes de:</span>" +
+          "<span class='cellContentText2'>" + de + " " + te + "</span>" +
+          "</div>" +
+          "<div class='cellContentBoxText'>" +
+          "<span class='cellContentText1'>Operadores:</span>" +
+          "<span class='cellContentText2'> " + qe + "</span>" +
+          "</div>" +
+          "</div>" +
+          "<div class='cellContentDivider'>" +
           "</div>" +
           "<div class='cellContentRight'>" +
-          "<div class='statusTag'>" +
           "<div class='tagInLater'>" +
-          "<span class='inProcess'>Orden Tardia</span>" +
+          "<span class='statusTag'>Orden Tardia</span>" +
           "</div>" +
-          "</div>" +
-          "<div class='tagButtons'>" +
+          "<div class='tagButtons '>" +
           "<div class='tabBoxIcons' ripple='ripple'>" +
-          "<i class='material-icons iconsTag'>open_in_new</i>" +
+          "<i class='material-icons iconsTag '>open_in_new</i>" +
           "</div>" +
           "<div class='tabBoxIcons' ripple='ripple'>" +
           "<i class='material-icons iconsTag'>insert_comment</i>" +
           "</div>" +
           "<div class='tabBoxIcons' ripple='ripple'>" +
           "<i class='material-icons iconsTag'>more_vert</i>" +
-          "</div>" +
-
           "</div>" +
           "</div>" +
           "</div>" +
@@ -330,41 +413,65 @@ function objUserFunction() {
           var table_len = (table.rows.length);
           var row = table.insertRow(table_len).outerHTML =
             "<tr id = 'trTable" + dem + "'" + ">" +
-            "<div class='cellContentAll' id='cellContentId" + dem + "'>" +
+            "	<div class='cellContentAll'>" +
             "<div class='cellContentTitle'>" +
-            "<span>" + neExtended + " (" + tag + ") " + " </span>" +
+            "	<span>" + neExtended + "</span>" +
             "</div>" +
             "<div class='cellContentDown'>" +
-            "<div class='cellContentLeft'>" +
-            "<span>Wip (" + wip + ")</span>" +
-            "<span>Numero de parte (" + np + ")</span>" +
-            "<div class=''>" +
-            "<span>Cantidad: " + q + " " + "</span>" +
-            "<span>" + turnExtended + "</span>" +
+            "<div class='cellContentIcon'>" +
+            "<img class='cellContentImage ' src='../image/boardCards/user" + gen + ".png' draggable='false'></img>" +
             "</div>" +
+            "<div class='cellContentDivider'>" +
+            "</div>" +
+            "<div class='cellContentLeft'>" +
+            "<div class='cellContentBoxText'>" +
+            "<span class='cellContentText1'>Wip:</span>" +
+            "<span class='cellContentText2'>(" + wip + ")</span>" +
+            "</div>" +
+            "<div class='cellContentBoxText'>" +
+            "<span class='cellContentText1'>Numero de Parte:</span>" +
+            "<span class='cellContentText2'>" + np + "</span>" +
+            "</div>" +
+            "<div class='cellContentBoxText'>" +
+            "<span class='cellContentText1'>" + turnExtended1 + ":</span>" +
+            "<span class='cellContentText2'> " + turnExtended2 + "</span>" +
+            "</div>" +
+            "<div class='cellContentBoxText'>" +
+            "<span class='cellContentText1'>Cantidad:</span>" +
+            "<span class='cellContentText2'> " + q + "</span>" +
+            "</div>" +
+            "</div>" +
+            "<div class='cellContentDivider'>" +
             "</div>" +
             "<div class='cellContentMiddle'>" +
-            "<span>Inicio: " + ds + " " + ts + "</span>" +
-            "<span>Finalizar antes de: " + de + " " + te + "</span>" +
-            "<span>Operadores: " + qe + "</span>" +
+            "<div class='cellContentBoxText'>" +
+            "<span class='cellContentText1'>Inicio:</span>" +
+            "<span class='cellContentText2'> " + ds + " " + ts + "</span>" +
+            "</div>" +
+            "<div class='cellContentBoxText'>" +
+            "<span class='cellContentText1'>Finalizar Antes de:</span>" +
+            "<span class='cellContentText2'>" + de + " " + te + "</span>" +
+            "</div>" +
+            "<div class='cellContentBoxText'>" +
+            "<span class='cellContentText1'>Operadores:</span>" +
+            "<span class='cellContentText2'> " + qe + "</span>" +
+            "</div>" +
+            "</div>" +
+            "<div class='cellContentDivider'>" +
             "</div>" +
             "<div class='cellContentRight'>" +
-            "<div class='statusTag'>" +
             "<div class='tagInClosedLater'>" +
-            "<span class='inProcess'>Orden Cerrada (" + df + " min Despues)</span>" +
+            "<span class='statusTag'>Orden Cerrada (" + df + " min Des.)</span>" +
             "</div>" +
-            "</div>" +
-            "<div class='tagButtons'>" +
+            "<div class='tagButtons '>" +
             "<div class='tabBoxIcons' ripple='ripple'>" +
-            "<i class='material-icons iconsTag'>open_in_new</i>" +
+            "<i class='material-icons iconsTag '>open_in_new</i>" +
             "</div>" +
             "<div class='tabBoxIcons' ripple='ripple'>" +
             "<i class='material-icons iconsTag'>insert_comment</i>" +
             "</div>" +
             "<div class='tabBoxIcons' ripple='ripple'>" +
             "<i class='material-icons iconsTag'>more_vert</i>" +
-            "</div>" +
-
             "</div>" +
             "</div>" +
             "</div>" +
@@ -379,41 +486,65 @@ function objUserFunction() {
           var table_len = (table.rows.length);
           var row = table.insertRow(table_len).outerHTML =
             "<tr id = 'trTable" + dem + "'" + ">" +
-            "<div class='cellContentAll' id='cellContentId" + dem + "'>" +
+            "	<div class='cellContentAll'>" +
             "<div class='cellContentTitle'>" +
-            "<span>" + neExtended + " (" + tag + ") " + " </span>" +
+            "	<span>" + neExtended + "</span>" +
             "</div>" +
             "<div class='cellContentDown'>" +
-            "<div class='cellContentLeft'>" +
-            "<span>Wip (" + wip + ")</span>" +
-            "<span>Numero de parte (" + np + ")</span>" +
-            "<div class=''>" +
-            "<span>Cantidad: " + q + " " + "</span>" +
-            "<span>" + turnExtended + "</span>" +
+            "<div class='cellContentIcon'>" +
+            "<img class='cellContentImage ' src='../image/boardCards/user" + gen + ".png' draggable='false'></img>" +
             "</div>" +
+            "<div class='cellContentDivider'>" +
+            "</div>" +
+            "<div class='cellContentLeft'>" +
+            "<div class='cellContentBoxText'>" +
+            "<span class='cellContentText1'>Wip:</span>" +
+            "<span class='cellContentText2'>(" + wip + ")</span>" +
+            "</div>" +
+            "<div class='cellContentBoxText'>" +
+            "<span class='cellContentText1'>Numero de Parte:</span>" +
+            "<span class='cellContentText2'>" + np + "</span>" +
+            "</div>" +
+            "<div class='cellContentBoxText'>" +
+            "<span class='cellContentText1'>" + turnExtended1 + ":</span>" +
+            "<span class='cellContentText2'> " + turnExtended2 + "</span>" +
+            "</div>" +
+            "<div class='cellContentBoxText'>" +
+            "<span class='cellContentText1'>Cantidad:</span>" +
+            "<span class='cellContentText2'> " + q + "</span>" +
+            "</div>" +
+            "</div>" +
+            "<div class='cellContentDivider'>" +
             "</div>" +
             "<div class='cellContentMiddle'>" +
-            "<span>Inicio: " + ds + " " + ts + "</span>" +
-            "<span>Finalizar antes de: " + de + " " + te + "</span>" +
-            "<span>Operadores: " + qe + "</span>" +
+            "<div class='cellContentBoxText'>" +
+            "<span class='cellContentText1'>Inicio:</span>" +
+            "<span class='cellContentText2'> " + ds + " " + ts + "</span>" +
+            "</div>" +
+            "<div class='cellContentBoxText'>" +
+            "<span class='cellContentText1'>Finalizar Antes de:</span>" +
+            "<span class='cellContentText2'>" + de + " " + te + "</span>" +
+            "</div>" +
+            "<div class='cellContentBoxText'>" +
+            "<span class='cellContentText1'>Operadores:</span>" +
+            "<span class='cellContentText2'> " + qe + "</span>" +
+            "</div>" +
+            "</div>" +
+            "<div class='cellContentDivider'>" +
             "</div>" +
             "<div class='cellContentRight'>" +
-            "<div class='statusTag'>" +
             "<div class='tagInClosed'>" +
-            "<span class='inProcess'>Orden Cerrada (" + df + " min Antes)</span>" +
+            "<span class='statusTag'>Orden Cerrada (" + df + " min Ant.)</span>" +
             "</div>" +
-            "</div>" +
-            "<div class='tagButtons'>" +
+            "<div class='tagButtons '>" +
             "<div class='tabBoxIcons' ripple='ripple'>" +
-            "<i class='material-icons iconsTag'>open_in_new</i>" +
+            "<i class='material-icons iconsTag '>open_in_new</i>" +
             "</div>" +
             "<div class='tabBoxIcons' ripple='ripple'>" +
             "<i class='material-icons iconsTag'>insert_comment</i>" +
             "</div>" +
             "<div class='tabBoxIcons' ripple='ripple'>" +
             "<i class='material-icons iconsTag'>more_vert</i>" +
-            "</div>" +
-
             "</div>" +
             "</div>" +
             "</div>" +
@@ -488,3 +619,8 @@ Object.size = function(obj) {
   }
   return size;
 };
+
+function printCardBoard() {
+
+
+}

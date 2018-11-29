@@ -1,42 +1,71 @@
 <tr>
-	<div class="cellContentAll">
-		<div class="cellContentTitle">
-			<span>William Jesus Covarrubias Ramos (98776) </span>
-		</div>
-		<div class="cellContentDown">
-			<div class="cellContentLeft">
-				<span>Wip (3765063)</span>
-				<span>Numero de parte (236C1274G6)</span>
-				<div class="">
-					<span>Cantidad: 10</span>
-					<span>Turno: 1 (6:40AM - 4:30PM)</span>
-				</div>
-			</div>
-			<div class="cellContentMiddle">
-				<span>Inicio: 14/NOV/2018 8:41:34</span>
-				<span>Finalizar antes de: 14/NOV/2018 9:22:0</span>
-				<span>Operadores: 1</span>
-			</div>
-			<div class="cellContentRight">
-				<div class="statusTag">
-					<div class="tagInProcess">
-						<span class="inProcess">En Proceso</span>
-					</div>
-				</div>
-				<div class="tagButtons ">
-					<div class="tabBoxIcons" ripple="ripple">
-						<i class="material-icons iconsTag ">open_in_new</i>
-					</div>
-					<div class="tabBoxIcons" ripple="ripple">
-						<i class="material-icons iconsTag">insert_comment</i>
+							<div class='cellContentAll'>
+								<div class='cellContentTitle'>
+									<span>William Jesus Covarrubias Ramos</span>
+								</div>
 
-					</div>
-					<div class="tabBoxIcons" ripple="ripple">
-						<i class="material-icons iconsTag">more_vert</i>
-					</div>
+								<div class='cellContentDown'>
+									<div class='cellContentIcon'>
+										<img class='cellContentImage ' src='../image/boardCards/usetT.png' draggable='false'></img>
+									</div>
+									<div class='cellContentDivider'>
 
-				</div>
-			</div>
-		</div>
-	</div>
+									</div>
+									<div class='cellContentLeft'>
+										<div class='cellContentBoxText'>
+											<span class='cellContentText1'>Wip:</span>
+											<span class='cellContentText2'>(3786930)</span>
+										</div>
+										<div class='cellContentBoxText'>
+											<span class='cellContentText1'>Numero de Parte:</span>
+											<span class='cellContentText2'>(236C1274G3)</span>
+										</div>
+										<div class='cellContentBoxText'>
+											<span class='cellContentText1'>Turno 1:</span>
+											<span class='cellContentText2'> (6:40AM - 4:30PM)</span>
+										</div>
+										<div class='cellContentBoxText'>
+											<span class='cellContentText1'>Cantidad:</span>
+											<span class='cellContentText2'> 10</span>
+										</div>
+
+									</div>
+									<div class='cellContentDivider'>
+
+									</div>
+									<div class='cellContentMiddle'>
+										<div class='cellContentBoxText'>
+											<span class='cellContentText1'>Inicio:</span>
+											<span class='cellContentText2'> 28/Nov/2018 (7:21:30)</span>
+										</div>
+										<div class='cellContentBoxText'>
+											<span class='cellContentText1'>Finalizar Antes de:</span>
+											<span class='cellContentText2'> 28/Nov/2018 (11:1:0)</span>
+										</div>
+										<div class='cellContentBoxText'>
+											<span class='cellContentText1'>Operadores:</span>
+											<span class='cellContentText2'> 1</span>
+										</div>
+									</div>
+									<div class='cellContentDivider'>
+
+									</div>
+									<div class='cellContentRight'>
+										<div class='tagInProcess'>
+											<span class='statusTag'>En Proceso</span>
+										</div>
+										<div class='tagButtons '>
+											<div class='tabBoxIcons' ripple='ripple'>
+												<i class='material-icons iconsTag '>open_in_new</i>
+											</div>
+											<div class='tabBoxIcons' ripple='ripple'>
+												<i class='material-icons iconsTag'>insert_comment</i>
+
+											</div>
+											<div class='tabBoxIcons' ripple='ripple'>
+												<i class='material-icons iconsTag'>more_vert</i>
+											</div>
+										</div>
+									</div>
+								</div>
 </tr>
