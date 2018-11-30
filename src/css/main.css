@@ -1,9 +1,4 @@
-.animated {
-  -webkit-animation-duration: 10s;
-  animation-duration: 10s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
+.animated {}
 
 @-webkit-keyframes fadeIn {
   0% {
@@ -13,21 +8,6 @@
   100% {
     opacity: 1;
   }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
 }
 
 @font-face {
@@ -178,6 +158,9 @@ tr {
   transition: transform .2s;
   transition: 0.3s ease;
   border-radius: 4px;
+  animation-duration: .5s;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
 }
 
 .cellContentAll:hover {
@@ -1299,6 +1282,9 @@ tr {
   font-size: 20px;
   transition: transform .2s;
   transition: 0.3s ease;
+  animation-duration: .5s;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
 }
 
 .areaButton {

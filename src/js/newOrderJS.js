@@ -251,7 +251,6 @@ document.getElementById("buttonSaveOrder").addEventListener("click", function() 
 
         objU = record;
         let xrec = objU[0];
-        alert(xrec["wip"]);
         if (xrec["wip"] == wip) {
           let Data = "La Orden Ya Se Registro";
           ipcRenderer.send('request-update-label-in-second-window', Data)
@@ -287,14 +286,14 @@ document.getElementById("buttonSaveOrder").addEventListener("click", function() 
       } else {
         var rec2 = record[0];
         std = rec2["Std"];
-        do_something_when_you_get_your_result();
+        saveGlobal();
       }
     });
   }
 
 
 
-  function do_something_when_you_get_your_result() {
+  function saveGlobal() {
 
     let waitTime = (parseFloat(std) * 60) * parseInt(q);
     let tempAllSeconds = (hour * 60) + (minute);

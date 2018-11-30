@@ -9,6 +9,7 @@ var quanty = 0;
 var months = ["Ene", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec"];
 var demG;
 var dem;
+var stade = 0;
 
 (function handleWindowControls() {
 
@@ -46,8 +47,8 @@ document.getElementById('buttonClose').addEventListener("click", event => {
 });
 
 document.getElementById('btnLoop').addEventListener("click", event => {
-  alert(Object.size(obj));
-  // loadBoard();
+
+  loadBoard();
 })
 
 
@@ -110,20 +111,84 @@ function objFunction() {
 
 }
 
+
+
 function objUserFunction() {
 
-  dem = 0;
 
 
-  for (let z = 1; z <= Object.size(obj) - 1; z++) {
-
-    document.getElementById("trTable" + z).remove();
-    document.getElementById("demo" + z).remove();
-    document.getElementById("cellContentId" + z).remove();
+  if (stade == 0) {
+    stade = stade + 1;
+    printCardBoard();
+  } else {
+    clearboard();
+    printCardBoard();
   }
 
+}
+
+
+
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  for (let x = 1; x <= Object.size(obj); x++) {
+
+    let xrec = obj[x - 1];
+    var rest = xrec["de"].split("/");
+    var rest2 = xrec["te"];
+    var str = rest[0] + " " + rest[1] + " " + rest[2] + " " + rest2;
+    var countDownDate = new Date(str).getTime();
+
+    var now = new Date().getTime();
+
+    var distance = countDownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+
+    document.getElementById("demo" + x).innerHTML = days + "d " + hours + "h " +
+      minutes + "m " + seconds + "s ";
+    if (distance < 0) {
+      clearInterval(x);
+
+      document.getElementById("demo" + x).innerHTML = "EXPIRED";
+
+    }
+
+
+  }
+}, 1000);
+
+
+
+function isEmpty(obj) {
+  for (var key in obj) {
+    if (obj.hasOwnProperty(key))
+      return false;
+  }
+  return true;
+}
+
+Object.size = function(obj) {
+  var size = 0,
+    key;
+  for (key in obj) {
+    if (obj.hasOwnProperty(key)) size++;
+  }
+  return size;
+};
+
+function printCardBoard() {
+
+  dem = 0;
   let size = Object.size(obj);
-  if (size > quanty) {
+  if (size >= quanty) {
     quanty = size;
     for (let x in obj) {
       let objSource = obj[x]
@@ -189,8 +254,8 @@ function objUserFunction() {
         var table = document.getElementById("data_table");
         var table_len = (table.rows.length);
         var row = table.insertRow(table_len).outerHTML =
-          "<tr id = 'trTable" + dem + "'" + ">" +
-          "	<div class='cellContentAll'>" +
+          "<tr class='Tabletr' id = 'trTable" + dem + "'" + ">" +
+          "	<div class='cellContentAll' id='cellContentAllId" + dem + "' >" +
           "<div class='cellContentTitle'>" +
           "	<span>" + neExtended + "</span>" +
           "</div>" +
@@ -265,8 +330,8 @@ function objUserFunction() {
         var table = document.getElementById("data_table");
         var table_len = (table.rows.length);
         var row = table.insertRow(table_len).outerHTML =
-          "<tr id = 'trTable" + dem + "'" + ">" +
-          "	<div class='cellContentAll'>" +
+          "<tr class='Tabletr' id = 'trTable" + dem + "'" + ">" +
+          "	<div class='cellContentAll' id='cellContentAllId" + dem + "' >" +
           "<div class='cellContentTitle'>" +
           "	<span>" + neExtended + "</span>" +
           "</div>" +
@@ -338,8 +403,8 @@ function objUserFunction() {
         var table = document.getElementById("data_table");
         var table_len = (table.rows.length);
         var row = table.insertRow(table_len).outerHTML =
-          "<tr id = 'trTable" + dem + "'" + ">" +
-          "	<div class='cellContentAll'>" +
+          "<tr class='Tabletr' id = 'trTable" + dem + "'" + ">" +
+          "	<div class='cellContentAll' id='cellContentAllId" + dem + "' >" +
           "<div class='cellContentTitle'>" +
           "	<span>" + neExtended + "</span>" +
           "</div>" +
@@ -412,8 +477,8 @@ function objUserFunction() {
           var table = document.getElementById("data_table");
           var table_len = (table.rows.length);
           var row = table.insertRow(table_len).outerHTML =
-            "<tr id = 'trTable" + dem + "'" + ">" +
-            "	<div class='cellContentAll'>" +
+            "<tr class='Tabletr' id = 'trTable" + dem + "'" + ">" +
+            "	<div class='cellContentAll' id='cellContentAllId" + dem + "' >" +
             "<div class='cellContentTitle'>" +
             "	<span>" + neExtended + "</span>" +
             "</div>" +
@@ -485,8 +550,8 @@ function objUserFunction() {
           var table = document.getElementById("data_table");
           var table_len = (table.rows.length);
           var row = table.insertRow(table_len).outerHTML =
-            "<tr id = 'trTable" + dem + "'" + ">" +
-            "	<div class='cellContentAll'>" +
+            "<tr class='Tabletr' id = 'trTable" + dem + "'" + ">" +
+            "	<div class='cellContentAll' id='cellContentAllId" + dem + "' >" +
             "<div class='cellContentTitle'>" +
             "	<span>" + neExtended + "</span>" +
             "</div>" +
@@ -563,64 +628,14 @@ function objUserFunction() {
 
 }
 
+function clearboard() {
 
-
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  for (let x = 1; x <= Object.size(obj); x++) {
-
-    let xrec = obj[x - 1];
-    var rest = xrec["de"].split("/");
-    var rest2 = xrec["te"];
-    var str = rest[0] + " " + rest[1] + " " + rest[2] + " " + rest2;
-    var countDownDate = new Date(str).getTime();
-
-    var now = new Date().getTime();
-
-    var distance = countDownDate - now;
-
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-
-
-    document.getElementById("demo" + x).innerHTML = days + "d " + hours + "h " +
-      minutes + "m " + seconds + "s ";
-    if (distance < 0) {
-      clearInterval(x);
-
-      document.getElementById("demo" + x).innerHTML = "EXPIRED";
-
+  if (Object.size(obj) > 0) {
+    for (let z = 1; z <= Object.size(obj); z++) {
+      document.getElementById("trTable" + z).remove();
+      document.getElementById("demo" + z).remove();
+      document.getElementById("cellContentAllId" + z).remove();
     }
-
-
   }
-}, 1000);
-
-
-
-function isEmpty(obj) {
-  for (var key in obj) {
-    if (obj.hasOwnProperty(key))
-      return false;
-  }
-  return true;
-}
-
-Object.size = function(obj) {
-  var size = 0,
-    key;
-  for (key in obj) {
-    if (obj.hasOwnProperty(key)) size++;
-  }
-  return size;
-};
-
-function printCardBoard() {
-
 
 }
