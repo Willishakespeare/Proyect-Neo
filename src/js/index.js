@@ -631,10 +631,18 @@ function printCardBoard() {
 function clearboard() {
 
   if (Object.size(obj) > 0) {
-    for (let z = 1; z <= Object.size(obj); z++) {
-      document.getElementById("trTable" + z).remove();
-      document.getElementById("demo" + z).remove();
-      document.getElementById("cellContentAllId" + z).remove();
+    if (Object.size(obj) > quanty) {
+      for (let z = 1; z <= Object.size(obj) - 1; z++) {
+        document.getElementById("trTable" + z).remove();
+        document.getElementById("demo" + z).remove();
+        document.getElementById("cellContentAllId" + z).remove();
+      }
+    } else {
+      for (let z = 1; z <= Object.size(obj); z++) {
+        document.getElementById("trTable" + z).remove();
+        document.getElementById("demo" + z).remove();
+        document.getElementById("cellContentAllId" + z).remove();
+      }
     }
   }
 

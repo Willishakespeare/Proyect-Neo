@@ -200,6 +200,10 @@ document.getElementById("buttonClearSheet").addEventListener("click", function()
 //////////////////////////////////////////////////////////////////////////////
 
 document.getElementById("buttonSaveOrder").addEventListener("click", function() {
+  var loading = document.getElementById("loadSaveBar");
+  loading.style.visibility = "visible";
+  var loading2 = document.getElementById("iconSaveHidden");
+  loading2.style.visibility = "hidden";
   var wip = document.getElementById("wipInput").value;
   var np = document.getElementById("npInput").value;
   var ne = document.getElementById("neInput").value;
@@ -229,7 +233,10 @@ document.getElementById("buttonSaveOrder").addEventListener("click", function() 
     let Data = "Por favor Ingrese Todos los datos";
     ipcRenderer.send('request-update-label-in-second-window', Data)
 
-
+    var loading = document.getElementById("loadSaveBar");
+    loading.style.visibility = "hidden";
+    var loading2 = document.getElementById("iconSaveHidden");
+    loading2.style.visibility = "visible";
   } else {
 
     var Datastore = require('nedb'),
@@ -382,6 +389,10 @@ document.getElementById("buttonSaveOrder").addEventListener("click", function() 
 
       db.insert(doc, function(err, newDoc) {
         ipcRenderer.send('updateSend', true)
+        var loading = document.getElementById("loadSaveBar");
+        loading.style.visibility = "hidden";
+        var loading2 = document.getElementById("iconSaveHidden");
+        loading2.style.visibility = "visible";
         window.close();
       });
     }

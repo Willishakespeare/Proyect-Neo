@@ -5,6 +5,9 @@
   <meta charset="utf-8">
   <title></title>
   <link rel="stylesheet" type="text/css" href="../css/newOrderCSS.css">
+  <link href="../css/hover-min.css" type="text/css" rel="stylesheet">
+  <link href="../css/material.css" type="text/css" rel="stylesheet">
+  <link href="../css/material-icons.css" type="text/css" rel="stylesheet">
 
 </head>
 
@@ -67,55 +70,55 @@
             <input class="lb4" type="number" id="qInput" value=0> <br>
 
             <div class="qInputButtons">
-              <div class="qInputUpClass" id="qInputUp">
+              <div ripple="ripple" class="qInputUpClass" id="qInputUp">
                 <a class="qInputTag">+</a>
               </div>
-              <div class="qInputDownClass" id="qInputDown">
+              <div ripple="ripple" class="qInputDownClass" id="qInputDown">
                 <a class="qInputTag">-</a>
               </div>
 
             </div>
 
-            <div class="lbnd" class="q1" id="buttonQ1">
+            <div ripple="ripple" class="lbnd" class="q1" id="buttonQ1">
               <span>1</span>
             </div>
-            <div class="lbnd " class="q5" id="buttonQ5">
+            <div ripple="ripple" class="lbnd " class="q5" id="buttonQ5">
               <span>5</span>
             </div>
-            <div class="lbnd" class="q10" id="buttonQ10">
+            <div ripple="ripple" class="lbnd" class="q10" id="buttonQ10">
               <span>10</span>
             </div>
-            <div class="lbnd" class="q15" id="buttonQ15">
+            <div ripple="ripple" class="lbnd" class="q15" id="buttonQ15">
               <span>15</span>
             </div>
-            <div class="lbnd" class="q20" id="buttonQ20">
+            <div ripple="ripple" class="lbnd" class="q20" id="buttonQ20">
               <span>20</span>
             </div>
           </div>
           <div class="lbn">
             <input class="lb4" type="number" id="qeInput" value=0><br>
             <div class="qInputButtons">
-              <div class="qInputUpClass" id="qeInputUp">
+              <div ripple="ripple" class="qInputUpClass" id="qeInputUp">
                 <a class="qInputTag">+</a>
               </div>
-              <div class="qInputDownClass" id="qeInputDown">
+              <div ripple="ripple" class="qInputDownClass" id="qeInputDown">
                 <a class="qInputTag">-</a>
               </div>
 
             </div>
-            <div class="lbnd" class="qe1" id="buttonQe1">
+            <div ripple="ripple" class="lbnd" class="qe1" id="buttonQe1">
               <span>1</span>
             </div>
-            <div class="lbnd" class="qe2" id="buttonQe2">
+            <div ripple="ripple" class="lbnd" class="qe2" id="buttonQe2">
               <span>2</span>
             </div>
-            <div class="lbnd" class="qe3" id="buttonQe3">
+            <div ripple="ripple" class="lbnd" class="qe3" id="buttonQe3">
               <span>3</span>
             </div>
-            <div class="lbnd" class="qe4" id="buttonQe4">
+            <div ripple="ripple" class="lbnd" class="qe4" id="buttonQe4">
               <span>4</span>
             </div>
-            <div class="lbnd" class="qe5" id="buttonQe5">
+            <div ripple="ripple" class="lbnd" class="qe5" id="buttonQe5">
               <span>5</span>
             </div>
           </div>
@@ -125,14 +128,20 @@
     </div>
     <div class="sideDown">
 
-      <div class="buttonSaveClass" id="buttonSaveOrder">
-        <img class="iconSave" src="">
-        <span>Guardar Orden</span>
+      <div ripple="ripple" class="buttonSaveClass" id="buttonSaveOrder">
+        <i id="iconSaveHidden" class="material-icons iconOrderNew">add_box</i>
+        <div id="loadSaveBar" class="lds-ring loadSave">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <span>GUARDAR ORDEN</span>
       </div>
 
-      <div class="buttonClearClass" id="buttonClearSheet">
-        <img class="iconDelete" src="">
-        <span>Borrar</span>
+      <div ripple="ripple" class="buttonClearClass " id="buttonClearSheet">
+        <i class="material-icons iconClear">delete</i>
+        <span>BORRAR</span>
       </div>
     </div>
 
@@ -147,6 +156,8 @@
 <script>
   require("../js/newOrderJS.js")
 </script>
-
+<script>
+  require("../js/material.js")
+</script>
 
 </html>

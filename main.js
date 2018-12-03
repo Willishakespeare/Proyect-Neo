@@ -36,26 +36,19 @@ function createWindow() {
 
 }
 
-// var myWindow = null;
-// var shouldQuit = app.makeSingleInstance(function(commandLine, workingDirectory) {
-//   if (myWindow) {
-//     if (myWindow.isMinimized()) myWindow.restore();
-//     myWindow.focus();
-//   }
-// });
-//
-// if (shouldQuit) {
-//   app.quit();
-//   return;
-// }
-//
-//
-//
-// app.on('window-all-closed', app.quit);
-// app.on('before-quit', () => {
-//   app.removeAllListeners('close');
-//   app.close();
-// });
+var myWindow = null;
+var shouldQuit = app.makeSingleInstance(function(commandLine, workingDirectory) {
+  if (myWindow) {
+    if (myWindow.isMinimized()) myWindow.restore();
+    myWindow.focus();
+  }
+});
+
+if (shouldQuit) {
+  app.quit();
+  return;
+}
+
 
 app.on('ready', createWindow);
 app.on('window-all-closed', app.quit);
