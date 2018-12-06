@@ -1,4 +1,8 @@
-.animated {}
+:root {
+  --color-00: #FFF;
+  --color-01: #2D3646;
+  --color-02: #34495e;
+}
 
 @-webkit-keyframes fadeIn {
   0% {
@@ -83,7 +87,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", sans-serif;
-  color: #FFF;
 }
 
 h1 {
@@ -107,7 +110,7 @@ p {
 }
 
 .leftSide {
-  background: #2D3646;
+  background: var(--color-01);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -118,7 +121,7 @@ p {
 }
 
 .board {
-  background-color: #34495e;
+  background-color: var(--color-02);
   margin: auto;
   display: flex;
   align-items: center;
@@ -150,7 +153,7 @@ tr {
   margin-right: 1%;
   margin-bottom: 5px;
   box-shadow: 0px 5px 20px #2e2e2e;
-  background: #34495e;
+  background: var(--color-02);
   height: 120px;
   width: 98%;
   display: flex;
